@@ -1,6 +1,6 @@
-import { Channel } from "../../_types/PageTypes";
+import { Page } from "../../_types/PageTypes";
 
-const Collections: Channel = {
+const Collections: Page = {
   info: {
     title: "Collections",
     key: "collections",

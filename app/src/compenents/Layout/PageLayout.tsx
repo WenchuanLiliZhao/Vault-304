@@ -1,6 +1,6 @@
 import { Page, PageElement } from "../../pages/_types/PageTypes";
-import { Nav } from "../Nav/Nav";
-import { TopNav } from "../Nav/TopNav";
+import { Nav } from "./Nav/Nav";
+import { TopNav } from "./Nav/TopNav";
 import styles from "./PageLayout.module.scss";
 import React from "react";
 
@@ -23,7 +23,9 @@ export const PageLayout: React.FC<PageLayoutProps> = ({ page }) => {
             ))}
           </main>
         </div>
-        <div className={styles["right"]}></div>
+        <div className={styles["right"]}>
+          
+        </div>
       </div>
     </div>
   );

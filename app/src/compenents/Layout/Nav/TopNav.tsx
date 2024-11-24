@@ -1,11 +1,11 @@
 import styles from "./TopNav.module.scss";
 import React from "react";
-import { Channel, Page } from "../../pages/_types/PageTypes";
-import { SiteInfo } from "../../SiteInfo";
-import { FontSize } from "../../appStyles/font";
-import { NavLinkToTop } from "./Functions/NavLinkToTop";
-import { InfoChannels, MainChennels } from "../../pages/channels/Channels";
-import { HoverBox } from "../Buttons/Basic";
+import { Page } from "../../../pages/_types/PageTypes";
+import { SiteInfo } from "../../../SiteInfo";
+import { FontSize } from "../../../appStyles/font";
+import { NavLinkToTop } from "../_Functions/NavLinkToTop";
+import { InfoChannels, MainChennels } from "../../../pages/channels/Channels";
+import { HoverBox } from "../../Buttons/Basic";
 
 interface TopNavProps {
   page: Page;
@@ -85,7 +85,7 @@ export const TopNav: React.FC<TopNavProps> = ({ page }) => {
               >
                 {group.title}
               </div>
-              {Object.values(group.items).map((channel: Channel, k: number) => (
+              {Object.values(group.items).map((channel: Page, k: number) => (
                 <div
                   key={`${channel}${k}`}
                   onClick={Toggle} // note: toggle

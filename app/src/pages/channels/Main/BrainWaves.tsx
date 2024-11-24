@@ -1,6 +1,6 @@
-import { Channel } from "../../_types/PageTypes";
+import { Page } from "../../_types/PageTypes";
 
-const BrainWaves: Channel = {
+const BrainWaves: Page = {
   info: {
     title: "Brain Waves",
     key: "brain-waves",
