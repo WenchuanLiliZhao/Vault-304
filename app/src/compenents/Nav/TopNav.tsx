@@ -5,6 +5,7 @@ import { SiteInfo } from "../../SiteInfo";
 import { FontSize } from "../../appStyles/font";
 import { NavLinkToTop } from "./Functions/NavLinkToTop";
 import { InfoChannels, MainChennels } from "../../pages/channels/Channels";
+import { HoverBox } from "../Buttons/Basic";
 
 interface TopNavProps {
   page: Page;
@@ -31,7 +32,7 @@ export const TopNav: React.FC<TopNavProps> = ({ page }) => {
       element.classList.toggle(styles["open"]);
     }
 
-    const body = document.getElementById("root");
+    const body = document.querySelector("body");
     body?.classList.toggle("alt-nav-open");
   }
 
@@ -41,6 +42,7 @@ export const TopNav: React.FC<TopNavProps> = ({ page }) => {
         {/* left */}
         <div className={styles["alt-nav-btn"]} onClick={Toggle}>
           <span className={`material-symbols-outlined`}>menu</span>
+          <HoverBox />
         </div>
         {/* right */}
         <div className={styles["nav-body"]}>
@@ -91,6 +93,7 @@ export const TopNav: React.FC<TopNavProps> = ({ page }) => {
                   style={FontSize.small}
                 >
                   {channel.info.title}
+                  <HoverBox />
                 </NavLinkToTop>
               ))}
             </div>
