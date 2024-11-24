@@ -1,6 +1,6 @@
-import { Page } from "../_types/PageTypes";
+import { Channel } from "../_types/PageTypes";
 
-const NotFound: Page = {
+const NotFound: Channel = {
   info: {
     title: "404 Not Found",
     key: "*",

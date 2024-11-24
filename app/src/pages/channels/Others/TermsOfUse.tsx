@@ -1,6 +1,6 @@
-import { Page } from "../../_types/PageTypes";
+import { Channel } from "../../_types/PageTypes";
 
-const TermsOfUse: Page = {
+const TermsOfUse: Channel = {
   info: {
     title: "Terms of Use",
     key: "terms-of-use",

@@ -1,6 +1,6 @@
-import { Page } from "../../_types/PageTypes";
+import { Channel } from "../../_types/PageTypes";
 
-const Privacy: Page = {
+const Privacy: Channel = {
   info: {
     title: "Privacy Statement",
     key: "privacy",
