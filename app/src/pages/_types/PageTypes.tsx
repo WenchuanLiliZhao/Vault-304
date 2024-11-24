@@ -1,12 +1,19 @@
+export type Page =
+  | Channel //
+  | Person
+  | Article
+  | Book
+
+
 // ================================
 // Basic info settings
 // ================================
 
-import { Tag } from "./Tag";
+import { Topic } from "./Topics";
 
 // General info
 // --------------------------------
-type BasicPageInfo = {
+export type BasicPageInfo = {
   title: string;
   key: string;
   summary: string;
@@ -42,8 +49,12 @@ interface WithUpdateDate {
   // Note: this is an array of 3-aries
 }
 
+interface WithTopic {
+  topic: Topic
+}
+
 interface WithTags {
-  tags: Tag[]
+  tags: string[]
 }
 
 // ================================
@@ -77,6 +88,7 @@ export interface ArticleInfo
     WithCover,
     WithAuthors,
     WithUpdateDate,
+    WithTopic,
     WithTags {}
 
 export interface Article {

@@ -2,8 +2,8 @@ import { Channel } from "../../_types/PageTypes";
 
 const Collections: Channel = {
   info: {
-    title: "",
-    key: "",
+    title: "Collections",
+    key: "collections",
     summary: ""
   },
   content: [(

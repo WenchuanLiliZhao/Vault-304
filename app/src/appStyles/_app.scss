@@ -1,3 +1,15 @@
 @forward "./0_reset.scss";
 @forward "./font.scss";
 @forward "./color.scss";
+@forward "./spacing.scss";
+@forward "./z-index.scss";
+
+::-moz-selection { /* Code for Firefox */
+  color: inherit;
+  background: inherit;
+}
+
+::selection {
+  color: inherit;
+  background: inherit;
+}
