@@ -10,7 +10,7 @@ Vivamus nunc felis, interdum sed accumsan at, finibus et dui. Aenean sed massa d
   },
   content: [(
     <>
-      Home
+      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam hic culpa placeat, obcaecati eius quasi expedita voluptatum in. Velit aliquid, saepe provident dolorem laudantium expedita quis sequi quas vitae mollitia!</p>
     </>
   )]
 }

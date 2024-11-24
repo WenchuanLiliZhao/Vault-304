@@ -9,12 +9,14 @@ export const Nav = () => {
 
   return (
     <nav className={styles["nav"]}>
+      <div className={styles["container"]}>
       {ChannelArray.map((item: Channel, i: number) => (
         <NavLinkToTop key={i} className={styles["item"]} to={`/${item.info.key}`}>
           {item.info.title}
           <HoverBox />
         </NavLinkToTop>
       ))}
+    </div>
     </nav>
   )
 }

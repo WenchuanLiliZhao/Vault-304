@@ -37,8 +37,8 @@ export const TopNav: React.FC<TopNavProps> = ({ page }) => {
   }
 
   return (
-    <>
-      <div className={styles["top-nav"]}>
+    <div className={styles["top-nav"]}>
+      <div className={styles["top-nav-container"]}>
         {/* left */}
         <div className={styles["alt-nav-btn"]} onClick={Toggle}>
           <span className={`material-symbols-outlined`}>menu</span>
@@ -86,20 +86,24 @@ export const TopNav: React.FC<TopNavProps> = ({ page }) => {
                 {group.title}
               </div>
               {Object.values(group.items).map((channel: Channel, k: number) => (
-                <NavLinkToTop
+                <div
                   key={`${channel}${k}`}
-                  to={`/${channel.info.key}`}
-                  className={styles["channel-title"]}
-                  style={FontSize.small}
+                  onClick={Toggle} // note: toggle
                 >
-                  {channel.info.title}
-                  <HoverBox />
-                </NavLinkToTop>
+                  <NavLinkToTop
+                    to={`/${channel.info.key}`}
+                    className={styles["channel-title"]}
+                    style={FontSize.small}
+                  >
+                    {channel.info.title}
+                    <HoverBox />
+                  </NavLinkToTop>
+                </div>
               ))}
             </div>
           ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };

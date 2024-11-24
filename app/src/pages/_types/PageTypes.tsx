@@ -19,7 +19,9 @@ export type BasicPageInfo = {
   summary: string;
 };
 
-export type PageContent = (JSX.Element | string)[];
+export type PageElement = JSX.Element | string
+
+export type PageContent = PageElement[];
 
 // Additional Info
 // --------------------------------
@@ -114,4 +116,5 @@ export interface Book {
   toc: {
     [key: string]: Article
   }
+  content: PageContent
 }
