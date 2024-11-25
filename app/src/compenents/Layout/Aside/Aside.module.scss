@@ -1,5 +1,5 @@
 .aside {
-  z-index: calc(var(--z-index-nav) + 1);
+  z-index: calc(var(--z-index-nav) + 1);;
 
   .bg-btn {
     position: fixed;
@@ -31,8 +31,9 @@
     }
   }
 
-  .fix-container {
+  .content-container {
     position: fixed;
+    overflow-y: scroll;
 
     width: var(--spacing-aside-size);
 
@@ -51,7 +52,6 @@
 
     .aside-footer {
       padding: 24px;
-      padding-bottom: 48px;
       text-align: center;
       color: var(--color-text-disable);
     }
@@ -64,14 +64,14 @@
       display: none;
     }
 
-    .fix-container {
+    .content-container {
       right: 0;
     }
 
     &[class~="toggled"] {
       width: 0;
 
-      .fix-container {
+      .content-container {
         right: calc(-1 * var(--spacing-aside-size));
       }
     }
@@ -85,7 +85,7 @@
       opacity: 0;
     }
 
-    .fix-container {
+    .content-container {
       right: calc(-1 * var(--spacing-aside-size));
     }
 
@@ -95,7 +95,7 @@
         opacity: 1;
       }
 
-      .fix-container {
+      .content-container {
         right: 0;
       }
     }

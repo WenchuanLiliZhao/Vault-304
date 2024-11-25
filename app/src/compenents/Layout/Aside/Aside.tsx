@@ -2,11 +2,12 @@ import styles from "./Aside.module.scss";
 
 import React from "react";
 import { Page } from "../../../pages/_types/PageTypes";
-import { HoverBox } from "../../Buttons/Basic";
+import { HoverBox, TextButton } from "../../Buttons/Basic";
 import { AsideCalendar } from "./AsideComponents/AsideCalendar";
 import { GetTodayDateArray } from "../../Functions/Date";
 import { SiteInfo } from "../../../SiteInfo";
 import { FontSize } from "../../../appStyles/font";
+import { AsideInfoBox } from "./AsideComponents/AsideArticle";
 
 interface AsideProps {
   page: Page;
@@ -28,7 +29,13 @@ export const Aside: React.FC<AsideProps> = ({ page }) => {
       case "channel":
         return [
           <AsideCalendar />,
-          "sss"
+          <AsideInfoBox title={"About & Location"} content={[
+            SiteInfo["about & location"],
+            <TextButton text={"Contact"} size={"smallest"} fillMode={"fill"} onDark={false} inline={false} />
+          ]} />,
+          <AsideInfoBox title={"Copyrights"} content={[
+            SiteInfo["copyrights"]
+          ]} />
         ];
       case "post":
         return []
@@ -41,8 +48,6 @@ export const Aside: React.FC<AsideProps> = ({ page }) => {
     }
   };
 
-
-
   return (
     <aside className={styles["aside"]} id={AsideId}>
       <div className={styles["bg-btn"]} onClick={ToggleAside}></div>
@@ -54,14 +59,14 @@ export const Aside: React.FC<AsideProps> = ({ page }) => {
           <HoverBox mode="onDark" />
         </div>
       </div>
-      <div className={styles["fix-container"]}>
+      <div className={styles["content-container"]}>
         {AsideContent().map((item, i: number) => (
           <div className={styles["aside-item"]} key={`${item}${i}`}>
             {item}
           </div>
         ))}
 
-        <div className={styles["aside-footer"]} style={FontSize.smallest}>
+        <div className={`${styles["aside-footer"]} ${FontSize.smallest}`}>
           {SiteInfo.title} @{GetTodayDateArray()[0]}
         </div>
       </div>

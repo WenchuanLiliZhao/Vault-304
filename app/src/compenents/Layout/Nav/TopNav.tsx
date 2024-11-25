@@ -2,10 +2,10 @@ import styles from "./TopNav.module.scss";
 import React from "react";
 import { Page } from "../../../pages/_types/PageTypes";
 import { SiteInfo } from "../../../SiteInfo";
-import { FontSize } from "../../../appStyles/font";
 import { NavLinkToTop } from "../_Functions/NavLinkToTop";
 import { InfoChannels, MainChennels } from "../../../pages/channels/Channels";
 import { HoverBox } from "../../Buttons/Basic";
+import { FontSize } from "../../../appStyles/font";
 
 interface TopNavProps {
   page: Page;
@@ -46,7 +46,7 @@ export const TopNav: React.FC<TopNavProps> = ({ page }) => {
         </div>
         {/* right */}
         <div className={styles["nav-body"]}>
-          <div className={styles["page-path"]} style={FontSize.small}>
+          <div className={`${styles["page-path"]} ${FontSize.small}`}>
             <NavLinkToTop to={"/"} className={styles["site-title"]}>
               {SiteInfo.title}
             </NavLinkToTop>
@@ -76,9 +76,7 @@ export const TopNav: React.FC<TopNavProps> = ({ page }) => {
           {NavItems.map((group, i: number) => (
             <div className={styles["channel-group"]} key={`${group}${i}`}>
               <div
-                className={styles["channel-group-title"]}
-                style={FontSize.smallest}
-              >
+                className={`${styles["channel-group-title"]} ${FontSize.smallest}`}>
                 {group.title}
               </div>
               {Object.values(group.items).map((channel: Page, k: number) => (
@@ -88,9 +86,7 @@ export const TopNav: React.FC<TopNavProps> = ({ page }) => {
                 >
                   <NavLinkToTop
                     to={`/${channel.basicInfo.key}`}
-                    className={styles["channel-title"]}
-                    style={FontSize.small}
-                  >
+                    className={`${styles["channel-title"]} ${FontSize.small}`}>
                     {channel.basicInfo.title}
                     <HoverBox mode="onLight" />
                   </NavLinkToTop>

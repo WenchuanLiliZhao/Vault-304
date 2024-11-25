@@ -26,3 +26,20 @@
     }
   }
 }
+
+.text-button {
+  text-align: center;
+  color: var(--color-text-sec);
+
+  &.fill {
+    background-color: var(--color-bg-sec-trans);
+  }
+
+  &.outline {
+    border: 1px solid var(--color-border-main);
+  }
+
+  &.smallest {
+    padding: 8px;
+  }
+}

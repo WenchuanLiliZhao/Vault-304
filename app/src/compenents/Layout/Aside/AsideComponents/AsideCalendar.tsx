@@ -1,7 +1,7 @@
-import styles from "./AsideCalendar.module.scss"
-import React from 'react';
-import { FontSize } from '../../../../appStyles/font';
-import { HoverBox } from "../../../Buttons/Basic";
+import styles from "./AsideCalendar.module.scss";
+import React from "react";
+import { HoverBox, TextButton } from "../../../Buttons/Basic";
+import { FontSize } from "../../../../appStyles/font";
 
 // Helper function to get the number of days in a month
 const getDaysInMonth = (year: number, month: number): number => {
@@ -16,8 +16,18 @@ const getFirstDayOfMonth = (year: number, month: number): number => {
 // Helper function to get month name
 const getMonthName = (month: number): string => {
   const monthNames = [
-    'January', 'February', 'March', 'April', 'May', 'June',
-    'July', 'August', 'September', 'October', 'November', 'December'
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
   ];
   return monthNames[month];
 };
@@ -32,28 +42,28 @@ export const AsideCalendar: React.FC = () => {
   const firstDayOfMonth = getFirstDayOfMonth(currentYear, currentMonth);
 
   // Get days from the previous month
-  const prevMonth = (currentMonth === 0) ? 11 : currentMonth - 1;
-  const prevYear = (currentMonth === 0) ? currentYear - 1 : currentYear;
+  const prevMonth = currentMonth === 0 ? 11 : currentMonth - 1;
+  const prevYear = currentMonth === 0 ? currentYear - 1 : currentYear;
   const lastDayOfPrevMonth = getDaysInMonth(prevYear, prevMonth);
 
   // Generate days for the calendar
   const calendarDays = [];
 
   interface DayDataProps {
-    className?: string
+    className?: string;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    children: any
+    children: any;
   }
 
-  const DayData: React.FC<DayDataProps> = ({className, children}) => {
+  const DayData: React.FC<DayDataProps> = ({ className, children }) => {
     return (
       <div className={`${styles["day-data"]} ${className}`}>
         {children}
         <HoverBox mode="onLight" />
       </div>
-    )
-  }
-  
+    );
+  };
+
   // Fill in the last days of the previous month
   for (let i = firstDayOfMonth - 1; i >= 0; i--) {
     calendarDays.push(
@@ -66,10 +76,7 @@ export const AsideCalendar: React.FC = () => {
   // Fill in the current month days
   for (let day = 1; day <= daysInMonth; day++) {
     calendarDays.push(
-      <DayData
-        key={day}
-        className={day === currentDate ? styles['today'] : ''}
-      >
+      <DayData key={day} className={day === currentDate ? styles["today"] : ""}>
         {day}
       </DayData>
     );
@@ -77,7 +84,7 @@ export const AsideCalendar: React.FC = () => {
 
   // Calculate how many days required to fill the last week
   const nextDaysStart = calendarDays.length % 7;
-  
+
   // Fill in the first days of the next month
   if (nextDaysStart !== 0) {
     const nextFillDays = 7 - nextDaysStart;
@@ -89,16 +96,21 @@ export const AsideCalendar: React.FC = () => {
       );
     }
   }
-  
+
   const weeks: JSX.Element[] = [];
   for (let i = 0; i < calendarDays.length; i += 7) {
-    weeks.push(<div className={styles["row"]} key={i}>{calendarDays.slice(i, i + 7)}
-    </div>);
+    weeks.push(
+      <div className={styles["row"]} key={i}>
+        {calendarDays.slice(i, i + 7)}
+      </div>
+    );
   }
 
   return (
-    <div className={styles["aside-calendar"]} style={FontSize.smallest}>
-      <div className={styles[`calendar-title`]}>{`${getMonthName(currentMonth)} ${currentYear}`}</div>
+    <div className={`${styles["aside-calendar"]} ${FontSize.smallest}`}>
+      <div className={styles[`calendar-title`]}>{`${getMonthName(
+        currentMonth
+      )} ${currentYear}`}</div>
       <div className={styles[`calendar-table`]}>
         <div className={`calendar-header`}>
           <div className={styles[`week-days`]}>
@@ -114,11 +126,14 @@ export const AsideCalendar: React.FC = () => {
         <div className={styles[`calendar-body`]}>{weeks}</div>
       </div>
 
-      <div className={styles["view-calendar-btn"]}>
-        View Calendar
-        <HoverBox mode="onLight" />
-      </div>
+      <TextButton
+        className={styles["view-calendar-btn"]}
+        text={"View Calendar"}
+        size={"smallest"}
+        fillMode={"fill"}
+        onDark={false}
+        inline={false}
+      />
     </div>
   );
 };
-

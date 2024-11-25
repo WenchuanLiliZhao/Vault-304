@@ -1,4 +1,4 @@
-export const FontSize = {
+export const TestTextSize = {
   largest: {
     fontSize: "56px",
     lineHeight: "72px",
@@ -29,3 +29,12 @@ export const FontSize = {
     lineHeight: "20px",
   },
 };
+
+export const FontSize = {
+  largest: "font-size-largest",
+  larger: "font-size-larger",
+  large: "font-size-large",
+  medium: "font-size-medium",
+  small: "font-size-small",
+  smallest: "font-size-smallest",
+} as const

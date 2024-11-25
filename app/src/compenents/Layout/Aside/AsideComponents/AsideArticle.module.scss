@@ -1,0 +1,18 @@
+.aside-info-box {
+  .title {
+    font-weight: bold;
+    color: var(--color-text-em);
+  }
+
+  .body {
+    margin-top: 8px;
+
+    *:first-child {
+      margin-top: 0;
+    }
+
+    & > * {
+      margin-top: 8px;
+    }
+  }
+}
