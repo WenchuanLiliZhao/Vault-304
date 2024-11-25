@@ -1,0 +1,91 @@
+.aside {
+  z-index: calc(var(--z-index-nav) + 1);
+
+  .bg-btn {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: var(--color-bg-popup);
+
+    transition: opacity 0.2s;
+  }
+
+  .aside-header {
+    height: var(--spacing-nav-size);
+    display: grid;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding-right: var(--spacing-grid-column-gap);
+
+    .toggle-btn {
+      color: var(--color-text-reverse-main);
+      width: 32px;
+      height: 32px;
+      padding: 4px;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+  }
+
+  .fix-container {
+    position: fixed;
+
+    width: var(--spacing-aside-size);
+
+    top: var(--spacing-nav-size);
+    height: calc(100% - var(--spacing-nav-size));
+
+    background-color: var(--color-bg-main);
+    box-shadow: -1px 0 0 var(--color-border-main-trans);
+
+    transition: right 0.2s;
+  }
+
+  @media only screen and (min-width: 1201px) {
+    width: var(--spacing-aside-size);
+    display: block;
+    .bg-btn {
+      display: none;
+    }
+
+    .fix-container {
+      right: 0;
+    }
+
+    &[class~="toggled"] {
+      width: 0;
+
+      .fix-container {
+        right: calc(-1 * var(--spacing-aside-size));
+      }
+    }
+  }
+
+  @media only screen and (max-width: 1200px) {
+    width: 0;
+
+    .bg-btn {
+      pointer-events: none;
+      opacity: 0;
+    }
+
+    .fix-container {
+      right: calc(-1 * var(--spacing-aside-size));
+    }
+
+    &[class~="toggled"] {
+      .bg-btn {
+        pointer-events: all;
+        opacity: 1;
+      }
+
+      .fix-container {
+        right: 0;
+      }
+    }
+  }
+}

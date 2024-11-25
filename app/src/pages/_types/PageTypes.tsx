@@ -1,35 +1,11 @@
 import { Topic } from "./Topics";
 
-export type Page =
-  | Channel //
-  | Person
-  | Article
-  | Book
-
-// ================================
-// Basic info settings
-// ================================
-
-// General info
-// --------------------------------
-export type BasicPageInfo = {
-  title: string;
-  key: string;
-  summary: string;
-};
-
-export type PageElement = JSX.Element | string
-
-export type PageContent = (JSX.Element | string)[];
-
-// Additional Info
-// --------------------------------
-type WithCover = {
-  cover: {
-    url: string;
-    caption: string;
-  };
-};
+export interface Page {
+  basicInfo: BasicInfo;
+  postInfo?: PostInfo;
+  bookInfo?: string;
+  content: PageContent;
+}
 
 type Role =
   | "author" //
@@ -38,82 +14,26 @@ type Role =
   | "design"
   | "program";
 
-interface WithAuthors {
-  authors: {
-    data: Person | string; // Person is defined below
-    roles: Role[];
-  }[];
+export type PageElement = JSX.Element | string;
+
+export type PageContent = (JSX.Element | string)[];
+
+export interface BasicInfo {
+  title: string;
+  key: string;
+  pageType: "channel" | "post" | "collection" | "book"
+  summary?: string;
 }
 
-interface WithUpdateDate {
+export interface PostInfo {
   update: [number, number, number][];
-  // Note: this is an array of 3-aries
+  coverUrl: string;
+  coverCaption?: string;
+  authors: { data: Page | string; roles: Role[] }[];
+  label: Topic;
+  tags: string[];
 }
 
-interface WithTopic {
-  topic: Topic
-}
-
-interface WithTags {
-  tags: string[]
-}
-
-// ================================
-// Page Shapes
-// ================================
-
-// Channel
-// --------------------------------
-export type ChannelInfo = BasicPageInfo;
-
-export interface Channel {
-  info: ChannelInfo;
-  content: PageContent;
-}
-
-// --------------------------------
-// Person
-// --------------------------------
-export interface PersonInfo extends BasicPageInfo, WithCover {}
-
-export interface Person {
-  info: PersonInfo;
-  content: PageContent;
-}
-
-// --------------------------------
-// Post
-// --------------------------------
-export interface ArticleInfo
-  extends BasicPageInfo,
-    WithCover,
-    WithAuthors,
-    WithUpdateDate,
-    WithTopic,
-    WithTags {}
-
-export interface Article {
-  info: ArticleInfo;
-  content: PageContent;
-}
-
-// ================================
-// Collection Shape
-// ================================
-type BookOption = {
-  loadToc: boolean
-}
-
-export interface BookInfo
-  extends BasicPageInfo,
-    WithCover,
-    WithAuthors {}
-
-export interface Book {
-  info: BookInfo
-  option: BookOption
-  toc: {
-    [key: string]: Article
-  }
-  content: PageContent
+export interface CollectionInfo {
+  toc: { [key: string]: Page }
 }

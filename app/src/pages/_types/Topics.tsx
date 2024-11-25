@@ -3,7 +3,7 @@ import { Page } from "./PageTypes";
 type TopicInfo = Page;
 
 const Math: TopicInfo = {
-  info: {
+  basicInfo: {
     title: "Mathematics",
     key: "mathematics",
     summary: "",
@@ -12,7 +12,7 @@ const Math: TopicInfo = {
 };
 
 const UIUX: TopicInfo = {
-  info: {
+  basicInfo: {
     title: "UI/UX Design",
     key: "uiux-design",
     summary: "",
@@ -22,7 +22,7 @@ const UIUX: TopicInfo = {
 };
 
 const Illustration: TopicInfo = {
-  info: {
+  basicInfo: {
     title: "Illustration",
     key: "illustration",
     summary: "",
@@ -32,7 +32,7 @@ const Illustration: TopicInfo = {
 };
 
 const Coding: TopicInfo = {
-  info: {
+  basicInfo: {
     title: "Coding",
     key: "coding",
     summary: "",

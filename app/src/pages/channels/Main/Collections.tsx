@@ -1,9 +1,10 @@
-import { Channel } from "../../_types/PageTypes";
+import { Page } from "../../_types/PageTypes";
 
-const Collections: Channel = {
-  info: {
+const Collections: Page = {
+  basicInfo: {
     title: "Collections",
     key: "collections",
+    pageType: "channel",
     summary: ""
   },
   content: [(

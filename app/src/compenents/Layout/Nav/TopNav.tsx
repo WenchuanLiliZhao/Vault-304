@@ -24,7 +24,7 @@ const NavItems = [
 ];
 
 export const TopNav: React.FC<TopNavProps> = ({ page }) => {
-  function Toggle() {
+  function ToggleAltNav() {
     const toggleArray = document.querySelectorAll(`.${styles["toggle"]}`);
 
     for (let i = 0; i < toggleArray.length; i++) {
@@ -40,9 +40,9 @@ export const TopNav: React.FC<TopNavProps> = ({ page }) => {
     <div className={styles["top-nav"]}>
       <div className={styles["top-nav-container"]}>
         {/* left */}
-        <div className={styles["alt-nav-btn"]} onClick={Toggle}>
+        <div className={styles["alt-nav-btn"]} onClick={ToggleAltNav}>
           <span className={`material-symbols-outlined`}>menu</span>
-          <HoverBox />
+          <HoverBox mode="onLight" />
         </div>
         {/* right */}
         <div className={styles["nav-body"]}>
@@ -51,18 +51,14 @@ export const TopNav: React.FC<TopNavProps> = ({ page }) => {
               {SiteInfo.title}
             </NavLinkToTop>
             <NavLinkToTop
-              to={`/${page.info.key}`}
+              to={`/${page.basicInfo.key}`}
               className={styles["page-title"]}
             >
               <span className={styles["slash"]}>/</span>
-              <span className={styles["text"]}>{page.info.title}</span>
+              <span className={styles["text"]}>{page.basicInfo.title}</span>
             </NavLinkToTop>
           </div>
-          <div className={styles["right"]}>
-            <div className={styles["btn-group"]}>
-              <span className={`material-symbols-outlined`}>view_sidebar</span>
-            </div>
-          </div>
+          <div className={styles["right"]}></div>
         </div>
       </div>
 
@@ -70,7 +66,7 @@ export const TopNav: React.FC<TopNavProps> = ({ page }) => {
         <div
           className={`${styles["alt-nav-bg-btn"]} ${styles["toggle"]}`} // note: toggle
           id="alt-nav-bg-btn"
-          onClick={Toggle}
+          onClick={ToggleAltNav}
         ></div>
 
         <div
@@ -88,15 +84,15 @@ export const TopNav: React.FC<TopNavProps> = ({ page }) => {
               {Object.values(group.items).map((channel: Page, k: number) => (
                 <div
                   key={`${channel}${k}`}
-                  onClick={Toggle} // note: toggle
+                  onClick={ToggleAltNav} // note: toggle
                 >
                   <NavLinkToTop
-                    to={`/${channel.info.key}`}
+                    to={`/${channel.basicInfo.key}`}
                     className={styles["channel-title"]}
                     style={FontSize.small}
                   >
-                    {channel.info.title}
-                    <HoverBox />
+                    {channel.basicInfo.title}
+                    <HoverBox mode="onLight" />
                   </NavLinkToTop>
                 </div>
               ))}

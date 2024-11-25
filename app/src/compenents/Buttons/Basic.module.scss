@@ -4,12 +4,25 @@
   height: 100%;
   top: 0;
   left: 0;
+  cursor: pointer;
 
-  &:hover {
-    background-color: rgba(black, 0.04);
+  &.onLight {
+    &:hover {
+      background-color: rgba(black, 0.04);
+    }
+  
+    &:active {
+      background-color: rgba(black, 0.08);
+    }
   }
 
-  &:active {
-    background-color: rgba(black, 0.08);
+  &.onDark {
+    &:hover {
+      background-color: rgba(white, 0.12);
+    }
+  
+    &:active {
+      background-color: rgba(white, 0.16);
+    }
   }
 }

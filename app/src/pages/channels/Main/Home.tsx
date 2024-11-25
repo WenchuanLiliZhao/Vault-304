@@ -1,9 +1,10 @@
-import { Channel } from "../../_types/PageTypes"
+import { Page } from "../../_types/PageTypes"
 
-const Home: Channel = {
-  info: {
+const Home: Page = {
+  basicInfo: {
     title: "Overview",
     key: "", // this is home
+    pageType: "channel",
     summary: `
 Vivamus nunc felis, interdum sed accumsan at, finibus et dui. Aenean sed massa dictum, condimentum felis sit amet, suscipit felis. Donec a tempor enim. In ut orci sit amet lacus bibendum convallis. Sed ac placerat orci. Duis orci diam, eleifend sit amet imperdiet ac, hendrerit sit amet mauris.
     `
