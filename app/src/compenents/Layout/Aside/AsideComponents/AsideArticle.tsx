@@ -1,8 +1,8 @@
 import React from "react";
-import { PageContent, PageElement } from "../../../../pages/_types/PageTypes";
+import { PageContent, PageElement } from "../../../../pages/_types/PageShapes";
 import styles from "./AsideArticle.module.scss";
-import Markdown from "react-markdown";
 import { FontSize } from "../../../../appStyles/font";
+import { MDBlock } from "../../../Functions/Markdown";
 
 interface AsideArticleProps {
   title: string;
@@ -21,9 +21,9 @@ export const AsideInfoBox: React.FC<AsideArticleProps> = ({ title, content }) =>
             <React.Fragment key={`${item}${i}`}>
               {typeof item === "string" ? (
                 <>
-                  <Markdown>
+                  <MDBlock>
                     {item}
-                  </Markdown>
+                  </MDBlock>
                 </>
               ) : item}
             </React.Fragment>

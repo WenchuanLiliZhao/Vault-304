@@ -1,4 +1,4 @@
-import { Page } from "../../_types/PageTypes";
+import { Page } from "../../_types/PageShapes";
 
 const Privacy: Page = {
   basicInfo: {

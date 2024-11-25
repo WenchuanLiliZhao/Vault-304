@@ -1,4 +1,4 @@
-import { Page } from "./PageTypes";
+import { Page } from "./PageShapes";
 
 type TopicInfo = Page;
 

@@ -1,6 +1,6 @@
 import styles from "./AsideCalendar.module.scss";
 import React from "react";
-import { HoverBox, TextButton } from "../../../Buttons/Basic";
+import { HoverBox, TextButton } from "../../../Buttons/Buttons";
 import { FontSize } from "../../../../appStyles/font";
 
 // Helper function to get the number of days in a month

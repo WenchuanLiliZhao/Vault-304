@@ -1,10 +1,10 @@
 import styles from "./TopNav.module.scss";
 import React from "react";
-import { Page } from "../../../pages/_types/PageTypes";
+import { Page } from "../../../pages/_types/PageShapes";
 import { SiteInfo } from "../../../SiteInfo";
 import { NavLinkToTop } from "../_Functions/NavLinkToTop";
 import { InfoChannels, MainChennels } from "../../../pages/channels/Channels";
-import { HoverBox } from "../../Buttons/Basic";
+import { HoverBox } from "../../Buttons/Buttons";
 import { FontSize } from "../../../appStyles/font";
 
 interface TopNavProps {

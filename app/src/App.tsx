@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import "./appStyles/_app.scss"
 import { Channels } from "./pages/channels/Channels"
-import { Page } from "./pages/_types/PageTypes"
+import { Page } from "./pages/_types/PageShapes"
 import { PageLayout } from "./compenents/Layout/PageLayout"
 
 function App() {
