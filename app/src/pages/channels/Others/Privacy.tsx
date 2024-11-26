@@ -3,7 +3,7 @@ import { Page } from "../../_types/PageShapes";
 const Privacy: Page = {
   info: {
     title: "Privacy Statement",
-    key: "privacy",
+    path: "privacy",
     pageType: "channel",
     summary: ""
   },

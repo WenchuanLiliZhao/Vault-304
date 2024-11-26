@@ -6,6 +6,7 @@ import { Nav } from "./Nav/Nav";
 import { TopNav } from "./Nav/TopNav";
 import styles from "./PageLayout.module.scss";
 import React from "react";
+
 interface PageLayoutProps {
   page: Page;
 }

@@ -1,9 +1,12 @@
+
+import { PostFeed } from "../../../compenents/Feeds/PostFeed"
 import { Page } from "../../_types/PageShapes"
+import { BookPages } from "../../books/_Collections"
 
 const Home: Page = {
   info: {
     title: "Overview",
-    key: "", // this is home
+    path: "", // this is home
     pageType: "channel",
     summary: `
 Vivamus nunc felis, interdum sed accumsan at, finibus et dui. Aenean sed massa dictum, condimentum felis sit amet, suscipit felis.
@@ -11,7 +14,7 @@ Vivamus nunc felis, interdum sed accumsan at, finibus et dui. Aenean sed massa d
   },
   content: [(
     <>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aperiam hic culpa placeat, obcaecati eius quasi expedita voluptatum in. Velit aliquid, saepe provident dolorem laudantium expedita quis sequi quas vitae mollitia!</p>
+      <PostFeed posts={BookPages} sortby={"date"} />
     </>
   )]
 }

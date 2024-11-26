@@ -2,7 +2,7 @@ import styles from "./TopNav.module.scss";
 import React from "react";
 import { Page } from "../../../pages/_types/PageShapes";
 import { SiteInfo } from "../../../SiteInfo";
-import { NavLinkToTop } from "../_Functions/NavLinkToTop";
+import { NavLinkToTop } from "../_Functions/Link";
 import { InfoChannels, MainChennels } from "../../../pages/channels/Channels";
 import { HoverBox } from "../../Buttons/Buttons";
 import { FontSize } from "../../../appStyles/font";
@@ -51,7 +51,7 @@ export const TopNav: React.FC<TopNavProps> = ({ page }) => {
               {SiteInfo.title}
             </NavLinkToTop>
             <NavLinkToTop
-              to={`/${page.info.key}`}
+              to={`/${page.info.path}`}
               className={styles["page-title"]}
             >
               <span className={styles["slash"]}>/</span>
@@ -85,7 +85,7 @@ export const TopNav: React.FC<TopNavProps> = ({ page }) => {
                   onClick={ToggleAltNav} // note: toggle
                 >
                   <NavLinkToTop
-                    to={`/${channel.info.key}`}
+                    to={`/${channel.info.path}`}
                     className={`${styles["channel-title"]} ${FontSize.small}`}>
                     {channel.info.title}
                     <HoverBox mode="onLight" />

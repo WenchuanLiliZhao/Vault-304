@@ -5,7 +5,7 @@ type TopicInfo = Page;
 const Math: TopicInfo = {
   info: {
     title: "Mathematics",
-    key: "mathematics",
+    path: "mathematics",
     summary: "",
     pageType: "channel"
   },
@@ -15,7 +15,7 @@ const Math: TopicInfo = {
 const UIUX: TopicInfo = {
   info: {
     title: "UI/UX Design",
-    key: "uiux-design",
+    path: "uiux-design",
     summary: "",
     pageType: "channel"
   },
@@ -26,7 +26,7 @@ const UIUX: TopicInfo = {
 const Illustration: TopicInfo = {
   info: {
     title: "Illustration",
-    key: "illustration",
+    path: "illustration",
     summary: "",
     pageType: "channel"
   },
@@ -37,7 +37,7 @@ const Illustration: TopicInfo = {
 const Coding: TopicInfo = {
   info: {
     title: "Coding",
-    key: "coding",
+    path: "coding",
     summary: "",
     pageType: "channel"
   },

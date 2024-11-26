@@ -20,13 +20,13 @@ export type PageContent = (JSX.Element | string)[];
 
 export interface BasicInfo {
   title: string;
-  key: string;
+  path: string;
   pageType: PageType
   summary: string;
 }
 
 export interface PostInfo {
-  update: [number, number, number][];
+  update: [number, number, number];
   coverUrl: string;
   coverCaption?: string;
   authors: { data: Page | string; roles: Role[] }[];

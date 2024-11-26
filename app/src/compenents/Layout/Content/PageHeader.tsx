@@ -37,7 +37,7 @@ export const PageHeader: React.FC<PageContentProps> = ({ page }) => {
       case "post":
         return <></>;
 
-      case "collection":
+      case "collection cover":
         return <></>;
 
       case "book cover":

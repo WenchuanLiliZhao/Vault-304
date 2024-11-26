@@ -12,7 +12,7 @@ export const MainContent: React.FC<MainContentProps> = ({ page }) => {
     const { pageType } = page.info;
 
     switch (pageType) {
-      default:
+      case "channel":
         return (
           <MainView>
             {page.content.map((item: PageElement, i: number) => (
@@ -25,8 +25,9 @@ export const MainContent: React.FC<MainContentProps> = ({ page }) => {
         );
       case "book cover":
         return [];
+      default: return null
     }
   };
 
-  return <Content />;
+  return (<Content />);
 };

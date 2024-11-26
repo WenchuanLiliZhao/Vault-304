@@ -28,7 +28,7 @@ export const Aside: React.FC<AsideProps> = ({ page }) => {
     switch (pageType) {
       case "post":
         return [];
-      case "collection":
+      case "collection cover":
         return [];
       case "book cover":
         return [];
