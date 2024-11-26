@@ -14,16 +14,16 @@ export const PageHeader: React.FC<PageContentProps> = ({ page }) => {
     title: (
       <>
         <h1 className={`${styles["page-title"]} ${FontSize.largest}`}>
-          {page.basicInfo.title}
+          {page.info.title}
         </h1>
       </>
     ),
 
     summary: (
       <>
-        {page.basicInfo.summary && (
+        {page.info.summary && (
           <div className={`${styles["page-summary"]} ${FontSize.medium}`}>
-            <MDBlock>{page.basicInfo.summary}</MDBlock>
+            <MDBlock>{page.info.summary}</MDBlock>
           </div>
         )}
       </>
@@ -31,7 +31,7 @@ export const PageHeader: React.FC<PageContentProps> = ({ page }) => {
   };
 
   const ContentByCase = () => {
-    const { pageType } = page.basicInfo;
+    const { pageType } = page.info;
 
     switch (pageType) {
       case "post":
@@ -40,7 +40,7 @@ export const PageHeader: React.FC<PageContentProps> = ({ page }) => {
       case "collection":
         return <></>;
 
-      case "book":
+      case "book cover":
         return <></>;
 
       default:

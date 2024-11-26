@@ -1,7 +1,7 @@
 import { Page } from "../../_types/PageShapes";
 
 const Collections: Page = {
-  basicInfo: {
+  info: {
     title: "Collections",
     key: "collections",
     pageType: "channel",

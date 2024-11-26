@@ -1,7 +1,7 @@
 import { Page } from "../../_types/PageShapes";
 
 const Contact: Page = {
-  basicInfo: {
+  info: {
     title: "Contact",
     key: "contact",
     pageType: "channel",

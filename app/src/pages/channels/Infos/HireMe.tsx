@@ -1,7 +1,7 @@
 import { Page } from "../../_types/PageShapes";
 
 const HireMe: Page = {
-  basicInfo: {
+  info: {
     title: "Hire Me",
     key: "hire-me",
     pageType: "channel",

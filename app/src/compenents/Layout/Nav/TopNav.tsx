@@ -51,11 +51,11 @@ export const TopNav: React.FC<TopNavProps> = ({ page }) => {
               {SiteInfo.title}
             </NavLinkToTop>
             <NavLinkToTop
-              to={`/${page.basicInfo.key}`}
+              to={`/${page.info.key}`}
               className={styles["page-title"]}
             >
               <span className={styles["slash"]}>/</span>
-              <span className={styles["text"]}>{page.basicInfo.title}</span>
+              <span className={styles["text"]}>{page.info.title}</span>
             </NavLinkToTop>
           </div>
           <div className={styles["right"]}></div>
@@ -85,9 +85,9 @@ export const TopNav: React.FC<TopNavProps> = ({ page }) => {
                   onClick={ToggleAltNav} // note: toggle
                 >
                   <NavLinkToTop
-                    to={`/${channel.basicInfo.key}`}
+                    to={`/${channel.info.key}`}
                     className={`${styles["channel-title"]} ${FontSize.small}`}>
-                    {channel.basicInfo.title}
+                    {channel.info.title}
                     <HoverBox mode="onLight" />
                   </NavLinkToTop>
                 </div>

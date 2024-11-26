@@ -1,7 +1,7 @@
 import { Page } from "../../_types/PageShapes"
 
 const Home: Page = {
-  basicInfo: {
+  info: {
     title: "Overview",
     key: "", // this is home
     pageType: "channel",

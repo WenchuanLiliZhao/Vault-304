@@ -1,7 +1,7 @@
-export type pageType =
+export type PageType =
   | "channel" //
   | "post"
   | "collection"
-  | "book"
+  | "book cover"
 
   

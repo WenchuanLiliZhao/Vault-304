@@ -1,7 +1,7 @@
 import { Page } from "../../_types/PageShapes";
 
 const BrainWaves: Page = {
-  basicInfo: {
+  info: {
     title: "Brain Waves",
     key: "brain-waves",
     pageType: "channel",

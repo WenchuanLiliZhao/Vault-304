@@ -1,10 +1,11 @@
 import { Page } from "../../_types/PageShapes";
 
 const Privacy: Page = {
-  basicInfo: {
+  info: {
     title: "Privacy Statement",
     key: "privacy",
     pageType: "channel",
+    summary: ""
   },
 
   content: [<>Privacy</>],

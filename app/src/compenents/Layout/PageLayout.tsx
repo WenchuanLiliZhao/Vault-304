@@ -1,17 +1,17 @@
-import { Page, PageElement } from "../../pages/_types/PageShapes";
+import { Page } from "../../pages/_types/PageShapes";
 import { Aside } from "./Aside/Aside";
+import { MainContent } from "./Content/MainContent";
 import { PageHeader } from "./Content/PageHeader";
-import { MainView } from "./Grid/GridViews";
 import { Nav } from "./Nav/Nav";
 import { TopNav } from "./Nav/TopNav";
 import styles from "./PageLayout.module.scss";
 import React from "react";
-
 interface PageLayoutProps {
   page: Page;
 }
 
 export const PageLayout: React.FC<PageLayoutProps> = ({ page }) => {
+
   return (
     <div className={styles["page-layout"]}>
       <TopNav page={page} />
@@ -23,11 +23,7 @@ export const PageLayout: React.FC<PageLayoutProps> = ({ page }) => {
           <main className={styles["main"]}>
             <PageHeader page={page} />
 
-            <MainView>
-              {page.content.map((item: PageElement) => (
-                <div key={`${item}`}>{item}</div>
-              ))}
-            </MainView>
+            <MainContent page={page} />
           </main>
         </div>
         <div className={styles["right"]}>

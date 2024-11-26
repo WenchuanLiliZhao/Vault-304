@@ -23,14 +23,14 @@ export const Aside: React.FC<AsideProps> = ({ page }) => {
   }
 
   const AsideContent = () => {
-    const { pageType } = page.basicInfo; // 从 BasicInfo 中解构 pageType
+    const { pageType } = page.info; // 从 BasicInfo 中解构 pageType
 
     switch (pageType) {
       case "post":
         return [];
       case "collection":
         return [];
-      case "book":
+      case "book cover":
         return [];
       default:
         return [

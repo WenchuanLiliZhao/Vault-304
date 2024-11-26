@@ -1,10 +1,9 @@
-import { pageType } from "./PageTypes";
+import { PageType } from "./PageType";
 import { Topic } from "./Topics";
 
 export interface Page {
-  basicInfo: BasicInfo;
+  info: BasicInfo;
   postInfo?: PostInfo;
-  bookInfo?: string;
   content: PageContent;
 }
 
@@ -22,8 +21,8 @@ export type PageContent = (JSX.Element | string)[];
 export interface BasicInfo {
   title: string;
   key: string;
-  pageType: pageType
-  summary?: string;
+  pageType: PageType
+  summary: string;
 }
 
 export interface PostInfo {
@@ -33,8 +32,10 @@ export interface PostInfo {
   authors: { data: Page | string; roles: Role[] }[];
   label: Topic;
   tags: string[];
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  toc?: any
+  parent?: Page
 }
 
-export interface CollectionInfo {
-  toc: { [key: string]: Page }
-}
+export type Subpages = { [key: string]: Page }

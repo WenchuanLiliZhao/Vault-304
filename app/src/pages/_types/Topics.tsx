@@ -3,7 +3,7 @@ import { Page } from "./PageShapes";
 type TopicInfo = Page;
 
 const Math: TopicInfo = {
-  basicInfo: {
+  info: {
     title: "Mathematics",
     key: "mathematics",
     summary: "",
@@ -13,7 +13,7 @@ const Math: TopicInfo = {
 };
 
 const UIUX: TopicInfo = {
-  basicInfo: {
+  info: {
     title: "UI/UX Design",
     key: "uiux-design",
     summary: "",
@@ -24,7 +24,7 @@ const UIUX: TopicInfo = {
 };
 
 const Illustration: TopicInfo = {
-  basicInfo: {
+  info: {
     title: "Illustration",
     key: "illustration",
     summary: "",
@@ -35,7 +35,7 @@ const Illustration: TopicInfo = {
 };
 
 const Coding: TopicInfo = {
-  basicInfo: {
+  info: {
     title: "Coding",
     key: "coding",
     summary: "",

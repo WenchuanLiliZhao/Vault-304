@@ -1,7 +1,7 @@
 import { Page } from "../../_types/PageShapes"
 
 const ArtAndDesign: Page = {
-  basicInfo: {
+  info: {
     title: "Art & Design",
     key: "art-and-design",
     pageType: "channel",
