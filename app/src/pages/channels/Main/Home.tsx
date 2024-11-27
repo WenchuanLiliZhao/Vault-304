@@ -7,7 +7,6 @@ const Home: Page = {
   info: {
     title: "Overview",
     path: "", // this is home
-    pageType: "channel",
     summary: `
 Vivamus nunc felis, interdum sed accumsan at, finibus et dui. Aenean sed massa dictum, condimentum felis sit amet, suscipit felis.
     `

@@ -1,4 +1,3 @@
-import { PageType } from "./PageType";
 import { Topic } from "./Topics";
 
 export interface Page {
@@ -21,7 +20,6 @@ export type PageContent = (JSX.Element | string)[];
 export interface BasicInfo {
   title: string;
   path: string;
-  pageType: PageType
   summary: string;
 }
 

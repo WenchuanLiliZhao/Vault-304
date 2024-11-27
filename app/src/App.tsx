@@ -10,13 +10,13 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route index element={<PageLayout page={Channels.Home} />} />
+        <Route index element={<PageLayout page={Channels.Home} type="channel" />} />
 
         {Object.values(Channels).map((item: Page, i: number) => (
           <Route
             key={`${item}${i}`}
             path={`/${item.info.path}`}
-            element={<PageLayout page={item} />}
+            element={<PageLayout page={item} type="channel" />}
           />
         ))}
 
@@ -24,11 +24,11 @@ function App() {
           <React.Fragment key={`${book}${i}`}>
             <Route
               path={`/${book.cover.info.path}`}
-              element={<PageLayout page={book.cover} />}
+              element={<PageLayout page={book.cover} type="book cover" />}
             />
 
             {Object.values(book.subpages).map((page: Page, k: number) => (
-              <Route key={`${page}${k}`} path={`/${page.info.path}`} element={<PageLayout page={page} />} />
+              <Route key={`${page}${k}`} path={`/${page.info.path}`} element={<PageLayout page={page} type="post" />} />
             ))}
           </React.Fragment>
         ))}

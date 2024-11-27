@@ -3,6 +3,8 @@ import React from "react";
 import { Page } from "../../pages/_types/PageShapes";
 import { MainGridView } from "../Layout/Grid/GridViews";
 import { HoverBox } from "../Buttons/Buttons";
+import { PageLink } from "../Layout/_Functions/Link";
+import { DateFormatter } from "../Functions/Date";
 
 interface Props {
   posts: { [key: string]: Page };
@@ -40,11 +42,32 @@ export const PostFeed: React.FC<Props> = ({ posts, sortby }) => {
         posts: posts,
         sortby: sortby,
       }).map((item: Page, i: number) => (
-        <a key={`${item}${i}`} className={styles["post-card"]} href={item.info.path}>
-          {item.info.title}
+        <PageLink
+          key={`${item}${i}`}
+          className={styles["post-card"]}
+          link={item}
+        >
+          {item.postInfo && (
+            <>
+              <div className={styles["card-header"]}>
+                <div className={styles["post-update"]}>
+                  {DateFormatter(item.postInfo.update)[2]}
+                  {DateFormatter(item.postInfo.update)[1]}
+                  {DateFormatter(item.postInfo.update)[0]}
+                </div>
+                <div className={styles["post-label"]}>
+                  {item.postInfo.label.info.title}
+                </div>
+              </div>
+              <div className={styles["post-cover"]}>
+                <img src={item.postInfo.coverUrl} alt="" />
+              </div>
+              <div className={styles["post-info"]}>{item.info.title}</div>
+            </>
+          )}
 
           <HoverBox mode={"onLight"} />
-        </a>
+        </PageLink>
       ))}
     </MainGridView>
   );

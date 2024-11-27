@@ -9,7 +9,6 @@ export const TestBook = CreateBook({
     info: {
       title: "Test Book",
       path: "test-book",
-      pageType: "book cover",
       summary: "ssss",
     },
     content: [],

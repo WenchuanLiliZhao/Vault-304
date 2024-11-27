@@ -4,7 +4,6 @@ const Privacy: Page = {
   info: {
     title: "Privacy Statement",
     path: "privacy",
-    pageType: "channel",
     summary: ""
   },
 

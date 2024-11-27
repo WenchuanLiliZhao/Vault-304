@@ -8,28 +8,28 @@ import { GetTodayDateArray } from "../../Functions/Date";
 import { SiteInfo } from "../../../SiteInfo";
 import { FontSize } from "../../../appStyles/font";
 import { AsideInfoBox } from "./AsideComponents/AsideArticle";
+import { PageType } from "../../../pages/_types/PageType";
 
 interface AsideProps {
   page: Page;
+  type: PageType;
 }
 
 export const AsideId = "aside";
 export const AsideToggleClass = "toggled";
 
-export const Aside: React.FC<AsideProps> = ({ page }) => {
+export const Aside: React.FC<AsideProps> = ({ page, type }) => {
   function ToggleAside() {
     const findAside = document.getElementById(AsideId);
     findAside?.classList.toggle(AsideToggleClass);
   }
 
   const AsideContent = () => {
-    const { pageType } = page.info; // 从 BasicInfo 中解构 pageType
-
-    switch (pageType) {
+    switch (type) {
       case "post":
-        return [];
-      case "collection cover":
-        return [];
+        return [<>
+          {page.info.title}
+        </>];
       case "book cover":
         return [];
       default:

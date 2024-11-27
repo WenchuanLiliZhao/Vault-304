@@ -2,16 +2,16 @@ import React from "react";
 import { Page, PageElement } from "../../../pages/_types/PageShapes";
 import { MainView } from "../Grid/GridViews";
 import { MDBlock } from "../../Functions/Markdown";
+import { PageType } from "../../../pages/_types/PageType";
 
 interface MainContentProps {
   page: Page;
+  type: PageType;
 }
 
-export const MainContent: React.FC<MainContentProps> = ({ page }) => {
+export const MainContent: React.FC<MainContentProps> = ({ page, type }) => {
   const Content = () => {
-    const { pageType } = page.info;
-
-    switch (pageType) {
+    switch (type) {
       case "channel":
         return (
           <MainView>

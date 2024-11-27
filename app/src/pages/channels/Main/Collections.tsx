@@ -4,7 +4,6 @@ const Collections: Page = {
   info: {
     title: "Collections",
     path: "collections",
-    pageType: "channel",
     summary: ""
   },
   content: [(

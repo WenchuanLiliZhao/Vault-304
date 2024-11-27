@@ -4,12 +4,14 @@ import { Page } from "../../../pages/_types/PageShapes";
 import { FontSize } from "../../../appStyles/font";
 import { MDBlock } from "../../Functions/Markdown";
 import { MainGridView, SecInMainGridView, MainView } from "../Grid/GridViews";
+import { PageType } from "../../../pages/_types/PageType";
 
 interface PageContentProps {
   page: Page;
+  type: PageType
 }
 
-export const PageHeader: React.FC<PageContentProps> = ({ page }) => {
+export const PageHeader: React.FC<PageContentProps> = ({ page, type }) => {
   const Content = {
     title: (
       <>
@@ -31,13 +33,8 @@ export const PageHeader: React.FC<PageContentProps> = ({ page }) => {
   };
 
   const ContentByCase = () => {
-    const { pageType } = page.info;
-
-    switch (pageType) {
+    switch (type) {
       case "post":
-        return <></>;
-
-      case "collection cover":
         return <></>;
 
       case "book cover":

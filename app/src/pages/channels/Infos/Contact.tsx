@@ -4,7 +4,6 @@ const Contact: Page = {
   info: {
     title: "Contact",
     path: "contact",
-    pageType: "channel",
     summary: ""
   },
   content: [(

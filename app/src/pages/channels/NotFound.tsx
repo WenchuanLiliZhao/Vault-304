@@ -4,7 +4,6 @@ const NotFound: Page = {
   info: {
     title: "404 Not Found",
     path: "*",
-    pageType: "channel",
     summary: ""
   },
   content: [(

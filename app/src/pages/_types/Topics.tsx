@@ -7,7 +7,6 @@ const Math: TopicInfo = {
     title: "Mathematics",
     path: "mathematics",
     summary: "",
-    pageType: "channel"
   },
   content: [],
 };
@@ -17,7 +16,6 @@ const UIUX: TopicInfo = {
     title: "UI/UX Design",
     path: "uiux-design",
     summary: "",
-    pageType: "channel"
   },
 
   content: [],
@@ -28,7 +26,6 @@ const Illustration: TopicInfo = {
     title: "Illustration",
     path: "illustration",
     summary: "",
-    pageType: "channel"
   },
 
   content: [],
@@ -39,7 +36,6 @@ const Coding: TopicInfo = {
     title: "Coding",
     path: "coding",
     summary: "",
-    pageType: "channel"
   },
 
   content: [],

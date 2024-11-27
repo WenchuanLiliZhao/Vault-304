@@ -4,7 +4,6 @@ const TermsOfUse: Page = {
   info: {
     title: "Terms of Use",
     path: "terms-of-use",
-    pageType: "channel",
     summary: ""
   },
   content: [(

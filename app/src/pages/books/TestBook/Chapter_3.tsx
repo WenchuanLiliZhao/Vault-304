@@ -1,35 +1,45 @@
-import {
-  BasicInfo,
-  Page,
-  PageContent,
-  PostInfo,
-} from "../../_types/PageShapes";
+import { Page } from "../../_types/PageShapes";
 import { Topics } from "../../_types/Topics";
-
-const info: BasicInfo = {
-  title: "Chapter 3",
-  path: "chapter-3",
-  pageType: "post",
-  summary: "",
-};
-
-const postInfo: PostInfo = {
-  update: [2024, 1, 2],
-  coverUrl:
-    "https://i.pinimg.com/1200x/9b/e5/a2/9be5a25f526f6c39ffeb4c0b4327a0fb.jpg",
-  authors: [],
-  label: Topics.Math,
-  tags: [],
-};
-
-const content: PageContent = [
-  `
-Vai Hugonet ses bistensa
-  `,
-];
+import { People } from "../../People/_PeopleEnum";
 
 export const Chapter_3: Page = {
-  info: info,
-  postInfo: postInfo,
-  content: content,
+  info: {
+    title: "Chapter 3",
+    path: "chapter-3",
+    summary: "",
+  },
+
+  postInfo: {
+    update: [1493, 1, 2],
+    coverUrl:
+      "https://i.pinimg.com/1200x/82/db/f4/82dbf49aba687278f37ce0b51800e2c7.jpg",
+    authors: [
+      {
+        data: People.Wenchuan,
+        roles: [
+          "author", "design"
+        ]
+      },
+      {
+        data: People.LUShu,
+        roles: [
+          "program", "design"
+        ]
+      },
+      {
+        data: People.Qianwen,
+        roles: [
+          "translation"
+        ]
+      }
+    ],
+    label: Topics.Math,
+    tags: [],
+  },
+
+  content: [
+    `
+hahahhah
+`,
+  ],
 };
