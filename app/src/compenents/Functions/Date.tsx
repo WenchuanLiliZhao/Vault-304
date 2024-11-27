@@ -10,11 +10,11 @@ export const DateFormatter = (
   const options: Intl.DateTimeFormatOptions = format ?? {
     year: "numeric",
     month: "short",
-    day: "2-digit",
+    day: "numeric",
   };
 
   // Format the date using Intl.DateTimeFormat and specify "en-GB" locale or modify as desired.
-  const formattedDate = dateObj.toLocaleDateString("en-GB", options);
+  const formattedDate = dateObj.toLocaleDateString("en-US", options);
 
   // Handle the case where the full format might not yield the expected splits.
   const parts = formattedDate

@@ -53,7 +53,7 @@ export const LinkToTop: React.FC<LinkProps> = ({
 
 interface PageLinkProps {
   link: Page;
-  children: any;
+  children: string | React.ReactNode;
   className?: string;
   id?: string;
   style?: object;

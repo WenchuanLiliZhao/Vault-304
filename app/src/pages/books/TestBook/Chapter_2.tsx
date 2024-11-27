@@ -4,29 +4,25 @@ import { People } from "../../People/_PeopleEnum";
 
 export const Chapter_2: Page = {
   info: {
-    title: "Chapter 2",
+    title: "The Principle of Mathematics of Natural Philosophy",
     path: "chapter-2",
-    summary: "",
+    summary: "Sed fermentum sit amet sapien at tincidunt. Curabitur sagittis tellus nec molestie congue.",
   },
 
   postInfo: {
     update: [1092, 1, 2],
     coverUrl:
-      "https://i.pinimg.com/1200x/82/db/f4/82dbf49aba687278f37ce0b51800e2c7.jpg",
-      authors: [
-        {
-          data: People.Wenchuan,
-          roles: [
-            "author", "design"
-          ]
-        },
-        {
-          data: People.LUShu,
-          roles: [
-            "program", "illustration"
-          ]
-        },
-      ],
+      "https://i.pinimg.com/1200x/15/f4/0f/15f40fd5e77a0d7138ba1d910a560fdd.jpg",
+    authors: [
+      {
+        data: People.Wenchuan,
+        roles: ["author", "design"],
+      },
+      {
+        data: People.LUShu,
+        roles: ["program", "illustration"],
+      },
+    ],
     label: Topics.Math,
     tags: [],
   },

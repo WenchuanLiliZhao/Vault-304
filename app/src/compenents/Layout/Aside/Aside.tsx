@@ -20,16 +20,31 @@ export const AsideToggleClass = "toggled";
 
 export const Aside: React.FC<AsideProps> = ({ page, type }) => {
   function ToggleAside() {
-    const findAside = document.getElementById(AsideId);
-    findAside?.classList.toggle(AsideToggleClass);
+    const findAside = document.getElementById(AsideId);    
+    const condition = findAside?.classList.contains(AsideToggleClass)
+    if (condition) {
+      findAside?.classList.remove(AsideToggleClass)
+      EnableBodyScroll()
+    } else {
+      findAside?.classList.add(AsideToggleClass)
+      DisableBodyScorll()
+    }
+  }
+
+  function DisableBodyScorll() {
+    const findBody = document.getElementById("body");
+    findBody?.classList.add("disable-scroll");
+  }
+
+  function EnableBodyScroll() {
+    const findBody = document.getElementById("body");
+    findBody?.classList.remove("disable-scroll");
   }
 
   const AsideContent = () => {
     switch (type) {
       case "post":
-        return [<>
-          {page.info.title}
-        </>];
+        return [<>{page.info.title}</>];
       case "book cover":
         return [];
       default:
@@ -57,7 +72,12 @@ export const Aside: React.FC<AsideProps> = ({ page, type }) => {
   };
 
   return (
-    <aside className={styles["aside"]} id={AsideId}>
+    <aside
+      className={styles["aside"]}
+      id={AsideId}
+      onMouseOver={DisableBodyScorll}
+      onMouseLeave={EnableBodyScroll}
+    >
       <div className={styles["bg-btn"]} onClick={ToggleAside}></div>
       <div className={styles["aside-header"]}>
         <div className={styles["toggle-btn"]} onClick={ToggleAside}>

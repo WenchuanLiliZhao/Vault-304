@@ -27,7 +27,7 @@ export interface PostInfo {
   update: [number, number, number];
   coverUrl: string;
   coverCaption?: string;
-  authors: { data: Page | string; roles: Role[] }[];
+  authors: { data: Page; roles: Role[] }[];
   label: Topic;
   tags: string[];
 

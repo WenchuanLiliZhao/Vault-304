@@ -5,6 +5,7 @@ import { Page } from "./pages/_types/PageShapes";
 import { PageLayout } from "./compenents/Layout/PageLayout";
 import { Books } from "./pages/books/_Collections";
 import React from "react";
+import { People } from "./pages/People/_PeopleEnum";
 
 function App() {
   return (
@@ -17,6 +18,14 @@ function App() {
             key={`${item}${i}`}
             path={`/${item.info.path}`}
             element={<PageLayout page={item} type="channel" />}
+          />
+        ))}
+
+        {Object.values(People).map((item, i: number) => (
+          <Route
+            key={i}
+            path={`/${item.info.path}`}
+            element={<PageLayout page={item} type="person" />}
           />
         ))}
 

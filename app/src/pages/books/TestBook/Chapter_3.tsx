@@ -6,7 +6,7 @@ export const Chapter_3: Page = {
   info: {
     title: "Chapter 3",
     path: "chapter-3",
-    summary: "",
+    summary: "Donec posuere lorem vitae eros sollicitudin tincidunt. Ut rhoncus sapien et hendrerit sollicitudin. Nulla tempus sed massa in consequat. Ut non est sollicitudin, placerat libero at, venenatis mi. Maecenas pulvinar maximus sapien, ullamcorper ullamcorper risus.",
   },
 
   postInfo: {

@@ -4,5 +4,17 @@
 
   --spacing-grid-column-gap: 24px;
   --spacing-max-content-width: 1200px;
+
   --spacing-content-padding: 48px;
+  @media only screen and (max-width: 800px) {
+    --spacing-content-padding: 32px;
+  }
+
+  @media only screen and (max-width: 560px) {
+    --spacing-content-padding: 24px;
+  }
+
+  @media only screen and (max-width: 420px) {
+    --spacing-content-padding: 16px;
+  }
 }

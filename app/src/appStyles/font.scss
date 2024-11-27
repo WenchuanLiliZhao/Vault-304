@@ -4,7 +4,8 @@
 
   --ff-serif: "Times New Roman", Times, serif;
 
-  --ff-mono: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  --ff-mono: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas,
+    Liberation Mono, monospace;
 }
 
 html,
@@ -13,6 +14,8 @@ body {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  color: var(--color-text-main);
 }
 
 .ff-sans {
@@ -52,6 +55,16 @@ em {
 .font-size-largest {
   font-size: 56px;
   line-height: 72px;
+
+  @media only screen and (max-width: 720px) {
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  @media only screen and (max-width: 640px) {
+    font-size: 40px;
+    line-height: 48px;
+  }
 }
 
 .font-size-larger {
