@@ -1,7 +1,7 @@
 import { Page } from "../../../pages/_types/PageShapes"
 import { MainChennels } from "../../../pages/channels/Channels"
 import { HoverBox } from "../../Buttons/Buttons"
-import { NavLinkToTop } from "../_Functions/Link"
+import { NavLinkToTop } from "../_Functions/Links"
 import styles from "./Nav.module.scss"
 
 export const Nav = () => {

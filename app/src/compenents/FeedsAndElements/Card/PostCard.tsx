@@ -4,7 +4,7 @@ import { Page } from "../../../pages/_types/PageShapes";
 import { HoverBox } from "../../Buttons/Buttons";
 import { DateFormatter } from "../../Functions/Date";
 import { MDBlock } from "../../Functions/Markdown";
-import { PageLink } from "../../Layout/_Functions/Link";
+import { PageLink } from "../../Layout/_Functions/Links";
 import { FontSize } from "../../../appStyles/font";
 
 interface PostCardProps {

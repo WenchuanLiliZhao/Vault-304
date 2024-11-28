@@ -4,12 +4,12 @@
 @forward "./spacing.scss";
 @forward "./z-index.scss";
 
-::-moz-selection { /* Code for Firefox */
-  color: inherit;
-  background: inherit;
-}
+// ::-moz-selection { /* Code for Firefox */
+//   color: inherit;
+//   background: inherit;
+// }
 
-::selection {
-  color: inherit;
-  background: inherit;
-}
+// ::selection {
+//   color: inherit;
+//   background: inherit;
+// }

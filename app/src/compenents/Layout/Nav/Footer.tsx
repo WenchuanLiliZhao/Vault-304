@@ -6,7 +6,7 @@ import { SiteInfo } from "../../../SiteInfo";
 import { SiteLinks } from "../../../SiteLinks";
 import { GetTodayDateArray } from "../../Functions/Date";
 import { MDBlock } from "../../Functions/Markdown";
-import { PageLink } from "../_Functions/Link";
+import { PageLink } from "../_Functions/Links";
 import { MainGridView, MainView } from "../Grid/GridViews";
 import styles from "./Footer.module.scss";
 

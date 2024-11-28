@@ -66,10 +66,13 @@ export const PageLink: React.FC<PageLinkProps> = ({
   id,
   style,
 }) => {
-  const pageLink = `/${link.info.path}`
+  const isExternalLink = link.info.path.startsWith("https");
+
+  const pageLink = isExternalLink ? `${link.info.path}` : `/${link.info.path}`;
+  const linkTarget = isExternalLink ? "_blank" : "";
 
   return (
-    <Link to={pageLink} className={className} id={id} style={style}>
+    <Link to={pageLink} className={className} id={id} style={style} target={linkTarget}>
       {children}
     </Link>
   );
