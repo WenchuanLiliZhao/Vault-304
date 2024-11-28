@@ -1,10 +1,16 @@
 .footer {
-  padding: 80px 0;
+  padding-top: 80px;
 
   a:hover {
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  & {
+    --footer-title-color: var(--color-text-main);
+    --footer-text-color: var(--color-text-main);
+    --footer-sec-text-color: var(--color-text-sec);
   }
 
   & {
@@ -16,6 +22,8 @@
     --channel-list-display: grid;
     --channel-list-template-columns: auto;
 
+    --footer-end-display: flex;
+
     @media only screen and (max-width: 1000px) {
       --footer-left-gc: span 12;
       --footer-right-gc: span 12;
@@ -25,6 +33,7 @@
     @media only screen and (max-width: 600px) {
       --channel-group-span: span 12;
       --channel-list-display: flex;
+      --footer-end-display: block;
     }
   }
 
@@ -40,11 +49,12 @@
 
         .site-title {
           font-weight: bold;
-          color: var(--color-text-em);
+          color: var(--footer-title-color);
         }
 
         .site-summary {
           margin-top: 8px;
+          color: var(--footer-text-color);
         }
       }
 
@@ -60,11 +70,12 @@
   
             .group-title {
               font-weight: bold;
-              color: var(--color-text-em);
+              color: var(--footer-title-color);
             }
   
             .channel-list {
-              
+              color: var(--footer-text-color);
+
               margin-top: 12px;
               display: var(--channel-list-display);
               grid-template-columns: var(--channel-list-template-columns);
@@ -79,9 +90,10 @@
 
     .foot-end {
       border-top: 1px solid var(--color-border-main);
-      color: var(--color-text-sec);
+      color: var(--footer-sec-text-color);
       padding-top: 8px;
-      display: flex;
+      padding-bottom: 48px;
+      display: var(--footer-end-display);
       justify-content: space-between;
 
       .end-links {
