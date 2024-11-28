@@ -1,8 +1,8 @@
-import styles from "./PostFeed.module.scss"
+import styles from "./CardFeed.module.scss"
 import React from "react";
-import { Page } from "../../pages/_types/PageShapes";
-import { MainGridView } from "../Layout/Grid/GridViews";
-import { PostCard } from "../Card&Feed/PostCard";
+import { Page } from "../../../pages/_types/PageShapes";
+import { MainGridView } from "../../Layout/Grid/GridViews";
+import { PostCard } from "../Card/PostCard";
 
 interface SortPostsProps {
   posts: { [key: string]: Page };

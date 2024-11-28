@@ -1,11 +1,11 @@
 import styles from "./PostCard.module.scss";
 import React from "react";
-import { Page } from "../../pages/_types/PageShapes";
-import { HoverBox } from "../Buttons/Buttons";
-import { DateFormatter } from "../Functions/Date";
-import { MDBlock } from "../Functions/Markdown";
-import { PageLink } from "../Layout/_Functions/Link";
-import { FontSize } from "../../appStyles/font";
+import { Page } from "../../../pages/_types/PageShapes";
+import { HoverBox } from "../../Buttons/Buttons";
+import { DateFormatter } from "../../Functions/Date";
+import { MDBlock } from "../../Functions/Markdown";
+import { PageLink } from "../../Layout/_Functions/Link";
+import { FontSize } from "../../../appStyles/font";
 
 interface PostCardProps {
   post: Page;
