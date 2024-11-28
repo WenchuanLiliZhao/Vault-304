@@ -1,0 +1,94 @@
+.footer {
+  padding: 80px 0;
+
+  a:hover {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  & {
+    --footer-left-gc: span 6;
+    --footer-right-gc: span 6;
+    --footer-channel-text-align: center;
+
+    --channel-group-span: span 4;
+    --channel-list-display: grid;
+    --channel-list-template-columns: auto;
+
+    @media only screen and (max-width: 1000px) {
+      --footer-left-gc: span 12;
+      --footer-right-gc: span 12;
+      --footer-channel-text-align: left;
+    }
+
+    @media only screen and (max-width: 600px) {
+      --channel-group-span: span 12;
+      --channel-list-display: flex;
+    }
+  }
+
+  .footer-container {
+    border-top: 1px solid var(--color-border-main);
+
+    .footer-body {
+      padding-top: 80px;
+      padding-bottom: 48px;
+      row-gap: 32px;
+      .site-info {
+        grid-column: var(--footer-left-gc);
+
+        .site-title {
+          font-weight: bold;
+          color: var(--color-text-em);
+        }
+
+        .site-summary {
+          margin-top: 8px;
+        }
+      }
+
+      .footer-channels {
+        grid-column: var(--footer-right-gc);
+
+        .foot-channels-grid {
+          row-gap: 24px;
+
+          .group {
+            grid-column: var(--channel-group-span);
+            text-align: var(--footer-channel-text-align);
+  
+            .group-title {
+              font-weight: bold;
+              color: var(--color-text-em);
+            }
+  
+            .channel-list {
+              
+              margin-top: 12px;
+              display: var(--channel-list-display);
+              grid-template-columns: var(--channel-list-template-columns);
+              gap: 12px;
+
+              flex-wrap: wrap; // note: set for responsiveness
+            }
+          }
+        }
+      }
+    }
+
+    .foot-end {
+      border-top: 1px solid var(--color-border-main);
+      color: var(--color-text-sec);
+      padding-top: 8px;
+      display: flex;
+      justify-content: space-between;
+
+      .end-links {
+        .end-link-divider {
+          margin: 0 8px;
+        }
+      }
+    }
+  }
+}

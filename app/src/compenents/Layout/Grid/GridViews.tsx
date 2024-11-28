@@ -9,7 +9,7 @@ interface ViewProps {
 
 export const MainView: React.FC<ViewProps> = ({children, className}) => {
   return (
-    <div className={`${className} ${styles["view"]}`}>
+    <div className={`${className} ${styles["main-view"]}`}>
       {children}
     </div>
   )

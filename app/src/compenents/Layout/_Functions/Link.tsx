@@ -60,7 +60,7 @@ interface PageLinkProps {
 }
 
 export const PageLink: React.FC<PageLinkProps> = ({
-  link: link,
+  link,
   children,
   className,
   id,

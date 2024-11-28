@@ -1,6 +1,8 @@
-.view {
-  max-width: 1200px;
+.main-view {
+  max-width: 1320px;
   margin: 0 auto;
+  box-sizing: content-box;
+  padding: 0 var(--spacing-content-padding);
 }
 
 .basic-grid-view {
