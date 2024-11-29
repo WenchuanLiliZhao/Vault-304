@@ -24,7 +24,7 @@ export const Chapter_2: Page = {
       },
     ],
     label: Topics.Math,
-    tags: [],
+    tags: ["Programming", "Coding", "Design", "In the Name of Father"],
   },
 
   content: [

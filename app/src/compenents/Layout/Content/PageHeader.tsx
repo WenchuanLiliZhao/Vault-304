@@ -36,11 +36,16 @@ export const PageHeader: React.FC<PageContentProps> = ({ page, type }) => {
       <>
         {page.postInfo && (
           <div className={`${styles["page-label"]} ${FontSize.large}`}>
-            <PageLink link={
-              page.postInfo.parent !== undefined ?
-              page.postInfo.parent : page.postInfo.label
-            }>
-              {page.postInfo.parent !== undefined ? page.postInfo.parent.info.title : page.postInfo.label.info.title}
+            <PageLink
+              link={
+                page.postInfo.parent !== undefined
+                  ? page.postInfo.parent
+                  : page.postInfo.label
+              }
+            >
+              {page.postInfo.parent !== undefined
+                ? page.postInfo.parent.info.title
+                : page.postInfo.label.info.title}
             </PageLink>
           </div>
         )}
@@ -55,10 +60,20 @@ export const PageHeader: React.FC<PageContentProps> = ({ page, type }) => {
             {page.postInfo.authors.map((item, i: number) => (
               <React.Fragment key={i}>
                 {i > 0 && i + 1 !== page.postInfo?.authors.length && ", "}
-                {i + 1 === page.postInfo?.authors.length && " and "}
+                {i > 0 && i + 1 === page.postInfo?.authors.length && " and "}
                 <PageLink link={item.data} className={styles["author-name"]}>
                   {item.data.info.title}
                 </PageLink>
+                {/* {` (`}
+                {item.roles.map((role, k: number) => (
+                  <React.Fragment key={k}>
+                    {k > 0 && k + 1 !== item.roles.length && ", "}
+
+                    {k > 0 && k + 1 === item.roles.length && " and "}
+                    {role}
+                  </React.Fragment>
+                ))}
+                {`)`} */}
               </React.Fragment>
             ))}
           </div>

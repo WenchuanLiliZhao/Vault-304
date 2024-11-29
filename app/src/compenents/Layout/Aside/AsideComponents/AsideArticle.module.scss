@@ -1,7 +1,9 @@
 .aside-info-box {
-  .title {
-    font-weight: bold;
-    color: var(--color-text-em);
+  .title-bar {
+    .title {
+      font-weight: bold;
+      color: var(--color-text-em);
+    }
   }
 
   .body {
@@ -14,5 +16,29 @@
     & > * {
       margin-top: 8px;
     }
+
+    p a:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.keywords {
+  display: flex;
+  justify-content: start;
+  flex-wrap: wrap;
+  row-gap: 8px;
+  column-gap: 8px;
+  color: var(--color-text-sec);
+
+  .keyword {
+    background-color: var(--color-bg-sec);
+    padding: 4px 16px;
+    border-radius: 1000px;
+    overflow: hidden;
+  }
+
+  .hint-no-keywords {
+    color: var(--color-text-neg);
   }
 }

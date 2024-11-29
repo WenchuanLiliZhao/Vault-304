@@ -1,0 +1,42 @@
+.aside-toc {
+  .header {
+    .label {
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      color: var(--color-text-sec);
+    }
+
+    .title {
+      text-transform: uppercase;
+      color: var(--color-text-em);
+      font-weight: bold;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .toc-list {
+      margin-top: 8px;
+
+      .toc-item {
+        display: block;
+        font-weight: bold;
+        color: var(--color-text-neg);
+        &[class~="active"] {
+          color: var(--color-text-em);
+        }
+        margin-left: -12px;
+        margin-right: -12px;
+
+        &:not(:first-of-type) {
+          margin-top: 4px;
+        }
+
+        .toc-item-container {
+          padding: 4px 12px;
+        }
+      }
+    }
+  }
+}

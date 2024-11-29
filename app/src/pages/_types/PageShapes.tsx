@@ -6,16 +6,19 @@ export interface Page {
   content: PageContent;
 }
 
-type Role =
-  | "author" //
-  | "translation"
-  | "illustration"
-  | "design"
-  | "program";
+export const Roles = {
+  author: "author",
+  translation: "translation",
+  illustration: "illustration",
+  design: "design",
+  program: "program",
+}
 
-export type PageElement = JSX.Element | string;
+export type Role = (typeof Roles)[keyof typeof Roles];
 
-export type PageContent = (JSX.Element | string)[];
+export type PageElement = JSX.Element | string
+
+export type PageContent = PageElement[];
 
 export interface BasicInfo {
   title: string;
@@ -31,9 +34,9 @@ export interface PostInfo {
   label: Topic;
   tags: string[];
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  toc?: any
-  parent?: Page
+  // note: invisible
+  toc?: Page[];
+  parent?: Page;
 }
 
-export type Subpages = { [key: string]: Page }
+export type Subpages = { [key: string]: Page };

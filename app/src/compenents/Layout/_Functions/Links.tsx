@@ -66,14 +66,57 @@ export const PageLink: React.FC<PageLinkProps> = ({
   id,
   style,
 }) => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
   const isExternalLink = link.info.path.startsWith("https");
 
   const pageLink = isExternalLink ? `${link.info.path}` : `/${link.info.path}`;
   const linkTarget = isExternalLink ? "_blank" : "";
 
   return (
-    <Link to={pageLink} className={className} id={id} style={style} target={linkTarget}>
+    <Link
+      to={pageLink}
+      className={className}
+      id={id}
+      style={style}
+      target={linkTarget}
+    >
       {children}
     </Link>
+  );
+};
+
+export const PageNavLink: React.FC<PageLinkProps> = ({
+  link,
+  children,
+  className,
+  id,
+  style,
+}) => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  const isExternalLink = link.info.path.startsWith("http");
+
+  const pageLink = isExternalLink ? `${link.info.path}` : `/${link.info.path}`;
+  const linkTarget = isExternalLink ? "_black" : "";
+
+  return (
+    <NavLink
+      to={pageLink}
+      className={className}
+      id={id}
+      style={style}
+      target={linkTarget}
+    >
+      {children}
+    </NavLink>
   );
 };

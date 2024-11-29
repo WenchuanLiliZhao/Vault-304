@@ -34,7 +34,7 @@ export const Chapter_3: Page = {
       }
     ],
     label: Topics.Math,
-    tags: [],
+    tags: ["Calculus"],
   },
 
   content: [

@@ -4,9 +4,11 @@ import { Page } from "../../../pages/_types/PageShapes";
 import { MainGridView } from "../../Layout/Grid/GridViews";
 import { PostCard } from "../Card/PostCard";
 
+export type SortPostMode = "default" | "date" | "a-z"
+
 interface SortPostsProps {
   posts: { [key: string]: Page };
-  sortby: "date" | "a-z";
+  sortby: SortPostMode;
 }
 
 export function SortPosts({ posts, sortby }: SortPostsProps): Page[] {

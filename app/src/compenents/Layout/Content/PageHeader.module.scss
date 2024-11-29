@@ -19,6 +19,9 @@
   font-weight: bold;
   color: var(--color-text-em);
   margin-bottom: 4px;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 
@@ -28,5 +31,8 @@
   .author-name {
     font-weight: bold;
     color: var(--color-text-em);
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

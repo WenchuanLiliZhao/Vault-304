@@ -63,7 +63,7 @@ export const PostCard: React.FC<PostCardProps> = ({ post }) => {
                 {post.postInfo.authors.map((author, k: number) => (
                   <React.Fragment key={k}>
                     {k > 0 && k + 1 !== post.postInfo?.authors.length && ", "}
-                    {k + 1 === post.postInfo?.authors.length && " and "}
+                    {k > 0 && k + 1 === post.postInfo?.authors.length && " and "}
                     <span className={styles["author-name"]}>
                       {author.data.info.title}
                     </span>

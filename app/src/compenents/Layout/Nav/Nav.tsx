@@ -1,7 +1,7 @@
 import { Page } from "../../../pages/_types/PageShapes"
 import { MainChennels } from "../../../pages/channels/Channels"
 import { HoverBox } from "../../Buttons/Buttons"
-import { NavLinkToTop } from "../_Functions/Links"
+import { PageNavLink } from "../_Functions/Links"
 import styles from "./Nav.module.scss"
 
 export const Nav = () => {
@@ -11,10 +11,10 @@ export const Nav = () => {
     <nav className={styles["nav"]}>
       <div className={styles["fix-container"]}>
       {ChannelArray.map((item: Page, i: number) => (
-        <NavLinkToTop key={i} className={styles["item"]} to={`/${item.info.path}`}>
+        <PageNavLink key={i} className={styles["item"]} link={item}>
           {item.info.title}
           <HoverBox mode="onLight" />
-        </NavLinkToTop>
+        </PageNavLink>
       ))}
     </div>
     </nav>

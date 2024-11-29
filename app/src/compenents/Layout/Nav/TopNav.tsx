@@ -2,8 +2,8 @@ import styles from "./TopNav.module.scss";
 import React from "react";
 import { Page } from "../../../pages/_types/PageShapes";
 import { SiteInfo } from "../../../SiteInfo";
-import { NavLinkToTop } from "../_Functions/Links";
-import { InfoChannels, MainChennels } from "../../../pages/channels/Channels";
+import { PageNavLink } from "../_Functions/Links";
+import { Channels, InfoChannels, MainChennels } from "../../../pages/channels/Channels";
 import { HoverBox } from "../../Buttons/Buttons";
 import { FontSize } from "../../../appStyles/font";
 
@@ -53,18 +53,18 @@ export const TopNav: React.FC<TopNavProps> = ({ page }) => {
         {/* right */}
         <div className={styles["nav-body"]}>
           <div className={`${styles["page-path"]} ${FontSize.small}`}>
-            <NavLinkToTop to={"/"} className={styles["site-title"]}>
+            <PageNavLink link={Channels.Home} className={styles["site-title"]}>
               {SiteInfo.title}
-            </NavLinkToTop>
+            </PageNavLink>
             {NavPath.map((item: Page, i: number) => (
               <React.Fragment key={`${item}${i}`}>
                 <span className={styles["slash"]}>/</span>
-                <NavLinkToTop
-                  to={`/${item.info.path}`}
+                <PageNavLink
+                  link={item}
                   className={styles["page-title"]}
                 >
                   {item.info.title}
-                </NavLinkToTop>
+                </PageNavLink>
               </React.Fragment>
             ))}
           </div>
@@ -95,13 +95,13 @@ export const TopNav: React.FC<TopNavProps> = ({ page }) => {
                   key={`${channel}${k}`}
                   onClick={ToggleAltNav} // note: toggle
                 >
-                  <NavLinkToTop
-                    to={`/${channel.info.path}`}
+                  <PageNavLink
+                    link={channel}
                     className={`${styles["channel-title"]} ${FontSize.small}`}
                   >
                     {channel.info.title}
                     <HoverBox mode="onLight" />
-                  </NavLinkToTop>
+                  </PageNavLink>
                 </div>
               ))}
             </div>

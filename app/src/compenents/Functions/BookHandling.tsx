@@ -3,12 +3,14 @@
 // ========================
 
 import { Page, Subpages } from "../../pages/_types/PageShapes";
+import { SortPostMode, SortPosts } from "../FeedsAndElements/Feeds/CardFeeds";
 
 // 定义 CorrectedBook 类型
 // 更新后反映新的结构，并校正拼写错误
 type CorrectedBook = {
-  cover: Page;                  // 对应 `Page` 类型的 cover（封面是一个页面）
-  subpages: Subpages;           // 将之前的 `pages` 替换为 `subpages`
+  cover: Page; // 对应 `Page` 类型的 cover（封面是一个页面）
+  subpages: Subpages; // 将之前的 `pages` 替换为 `subpages`
+  sortTocBy: SortPostMode;
 };
 
 // 定义基础参数类型
@@ -25,35 +27,42 @@ type BookA<T extends Subpages> = CorrectedBook & {
 export function CreateBook<T extends Subpages>({
   cover,
   subpages,
+  sortTocBy,
 }: BookParams<T>): BookA<T> {
-
   Object.values(subpages).forEach((subpage) => {
     // 对所有子页面重新组织路径
     // subpage.info.key = `${cover.info.key}/${subpage.info.key}`;
 
     if (subpage.postInfo) {
       // 加载目录
-      subpage.postInfo.toc = Object.values(subpages)
+      subpage.postInfo.toc = SortPosts({
+        posts: subpages,
+        sortby: sortTocBy,
+      });
 
       // 到底属于哪本书
-      subpage.postInfo.parent = cover
+      subpage.postInfo.parent = cover;
     }
   });
 
-  return { cover, subpages };
+  return { cover, subpages, sortTocBy };
 }
-
 
 // ========================
 // 合并书籍页面
 // ========================
 
 // 这个函数是为了防止在文章中交叉索引的时候，出现目录丢失
-export function MergeSubpages<T extends Record<string, { subpages: Subpages }>>(collections: T): {
-  [K in keyof T]: T[K]['subpages'];
+export function MergeSubpages<T extends Record<string, { subpages: Subpages }>>(
+  collections: T
+): {
+  [K in keyof T]: T[K]["subpages"];
 }[keyof T] {
-  return Object.values(collections).reduce((acc, item) => ({
-    ...acc,
-    ...item.subpages,
-  }), {} as Subpages);
+  return Object.values(collections).reduce(
+    (acc, item) => ({
+      ...acc,
+      ...item.subpages,
+    }),
+    {} as Subpages
+  );
 }

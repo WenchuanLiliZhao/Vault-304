@@ -18,4 +18,5 @@ export const TestBook = CreateBook({
     Chapter_2,
     Chapter_3,
   },
+  sortTocBy: "default"
 });

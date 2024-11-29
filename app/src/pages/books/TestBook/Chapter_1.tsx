@@ -1,4 +1,4 @@
-import { Page } from "../../_types/PageShapes";
+import { Page, Roles } from "../../_types/PageShapes";
 import { Topics } from "../../_types/Topics";
 import { People } from "../../People/_PeopleEnum";
 
@@ -17,11 +17,7 @@ export const Chapter_1: Page = {
     authors: [
       {
         data: People.LUShu,
-        roles: ["program", "translation"],
-      },
-      {
-        data: People.Qianwen,
-        roles: ["translation"],
+        roles: [Roles.author, Roles.design],
       },
     ],
     label: Topics.Math,
