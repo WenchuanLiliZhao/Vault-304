@@ -5,7 +5,7 @@ import { Channels } from "../../../pages/channels/Channels";
 import { SiteInfo } from "../../../SiteInfo";
 import { SiteLinks } from "../../../SiteLinks";
 import { GetTodayDateArray } from "../../Functions/Date";
-import { MDBlock } from "../../Functions/Markdown";
+import { MDBlock } from "../../Markdown/MDBlock";
 import { PageLink } from "../_Functions/Links";
 import { MainGridView, MainView } from "../Grid/GridViews";
 import styles from "./Footer.module.scss";

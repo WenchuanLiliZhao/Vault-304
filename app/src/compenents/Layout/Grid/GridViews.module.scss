@@ -1,5 +1,5 @@
 .main-view {
-  max-width: 1320px;
+  max-width: var(--spacing-max-content-width);
   margin: 0 auto;
   box-sizing: content-box;
   padding: 0 var(--spacing-content-padding);

@@ -6,16 +6,22 @@ import 'katex/dist/katex.min.css';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 import 'highlight.js/styles/github.css'; // Use a highlight.js theme of your choice
+import { CodeBlock } from './MDComponents/CodeBlock';
 
 interface Props {
   children: string;
+  className?: string;
 }
 
-export const MDBlock: React.FC<Props> = ({ children }) => {
+export const MDBlock: React.FC<Props> = ({ children, className }) => {
   return (
     <ReactMarkdown
+      className={className}
       remarkPlugins={[remarkMath, remarkGfm]}
       rehypePlugins={[rehypeKatex, rehypeHighlight]}
+      components={{
+        pre: ({children}) => <CodeBlock>{children}</CodeBlock>
+      }}
     >
       {children}
     </ReactMarkdown>

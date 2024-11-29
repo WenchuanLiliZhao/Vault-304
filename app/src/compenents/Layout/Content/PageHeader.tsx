@@ -2,7 +2,7 @@ import styles from "./PageHeader.module.scss";
 import React from "react";
 import { Page } from "../../../pages/_types/PageShapes";
 import { FontSize } from "../../../appStyles/font";
-import { MDBlock } from "../../Functions/Markdown";
+import { MDBlock } from "../../Markdown/MDBlock";
 import { MainGridView, SecInMainGridView, MainView } from "../Grid/GridViews";
 import { PageType } from "../../../pages/_types/PageType";
 import { PageLink } from "../_Functions/Links";

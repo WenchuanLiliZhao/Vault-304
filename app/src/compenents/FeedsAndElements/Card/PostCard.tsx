@@ -3,7 +3,7 @@ import React from "react";
 import { Page } from "../../../pages/_types/PageShapes";
 import { HoverBox } from "../../Buttons/Buttons";
 import { DateFormatter } from "../../Functions/Date";
-import { MDBlock } from "../../Functions/Markdown";
+import { MDBlock } from "../../Markdown/MDBlock";
 import { PageLink } from "../../Layout/_Functions/Links";
 import { FontSize } from "../../../appStyles/font";
 

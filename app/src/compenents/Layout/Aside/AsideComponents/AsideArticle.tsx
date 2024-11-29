@@ -6,7 +6,7 @@ import {
 } from "../../../../pages/_types/PageShapes";
 import styles from "./AsideArticle.module.scss";
 import { FontSize } from "../../../../appStyles/font";
-import { MDBlock } from "../../../Functions/Markdown";
+import { MDBlock } from "../../../Markdown/MDBlock";
 import { PageLink } from "../../_Functions/Links";
 import { DateFormatter } from "../../../Functions/Date";
 import { HoverBox } from "../../../Buttons/Buttons";

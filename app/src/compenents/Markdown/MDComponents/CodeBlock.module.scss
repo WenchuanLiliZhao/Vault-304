@@ -1,0 +1,34 @@
+.copy-btn {
+  display: none;
+}
+
+p {
+  code {
+    font-family: var(--ff-mono);
+    font-size: 0.875rem;
+    vertical-align: baseline;
+    background-color: var(--color-bg-darken);
+    padding: 0.15rem 0.3rem;
+    border-radius: 0.3rem;
+  }
+}
+
+.code-block {
+
+  margin: 2rem 0;
+  font-family: var(--ff-mono);
+  
+  line-height: 1.5;
+  border-radius: 8px;
+
+  background-color: var(--color-bg-pale);
+  border: 1px dashed var(--color-border-main);
+
+  .code-block-content {
+    code {
+      font-size: 0.875rem;
+      padding: 2rem;
+      background-color: rgba(white, 0)
+    }
+  }
+}
