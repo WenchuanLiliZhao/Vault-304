@@ -5,7 +5,8 @@ import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
 import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
-import 'highlight.js/styles/github.css'; // Use a highlight.js theme of your choice
+// import 'highlight.js/styles/github.css'; // Use a highlight.js theme of your choice
+import 'highlight.js/styles/github.css'; // Hardcoded theme
 import { CodeBlock } from './MDComponents/CodeBlock';
 
 interface Props {
