@@ -38,19 +38,21 @@
       padding: 0 var(--spacing-grid-column-gap);
 
       .page-path {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        line-clamp: 1;
+        -webkit-box-orient: vertical;
+        max-width: calc(100% - 72px);
+
         .site-title {
           font-weight: bold;
           color: var(--color-text-reverse-em);
         }
 
-        .page-title {
-          .slash {
-            margin-left: 8px;
-          }
-
-          .text {
-            margin-left: 8px;
-          }
+        .slash {
+          margin: 0 8px;
         }
       }
     }

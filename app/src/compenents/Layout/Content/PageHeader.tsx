@@ -5,10 +5,11 @@ import { FontSize } from "../../../appStyles/font";
 import { MDBlock } from "../../Functions/Markdown";
 import { MainGridView, SecInMainGridView, MainView } from "../Grid/GridViews";
 import { PageType } from "../../../pages/_types/PageType";
+import { PageLink } from "../_Functions/Links";
 
 interface PageContentProps {
   page: Page;
-  type: PageType
+  type: PageType;
 }
 
 export const PageHeader: React.FC<PageContentProps> = ({ page, type }) => {
@@ -30,12 +31,52 @@ export const PageHeader: React.FC<PageContentProps> = ({ page, type }) => {
         )}
       </>
     ),
+
+    label: (
+      <>
+        {page.postInfo && (
+          <div className={`${styles["page-label"]} ${FontSize.large}`}>
+            <PageLink link={
+              page.postInfo.parent !== undefined ?
+              page.postInfo.parent : page.postInfo.label
+            }>
+              {page.postInfo.parent !== undefined ? page.postInfo.parent.info.title : page.postInfo.label.info.title}
+            </PageLink>
+          </div>
+        )}
+      </>
+    ),
+
+    authors: (
+      <>
+        {page.postInfo?.authors && (
+          <div className={`${styles["page-authors-bar"]} ${FontSize.small}`}>
+            By{" "}
+            {page.postInfo.authors.map((item, i: number) => (
+              <React.Fragment key={i}>
+                {i > 0 && i + 1 !== page.postInfo?.authors.length && ", "}
+                {i + 1 === page.postInfo?.authors.length && " and "}
+                <PageLink link={item.data} className={styles["author-name"]}>
+                  {item.data.info.title}
+                </PageLink>
+              </React.Fragment>
+            ))}
+          </div>
+        )}
+      </>
+    ),
   };
 
   const ContentByCase = () => {
     switch (type) {
       case "post":
-        return <></>;
+        return (
+          <>
+            {Content.label}
+            {Content.title}
+            {Content.authors}
+          </>
+        );
 
       case "book cover":
         return <></>;

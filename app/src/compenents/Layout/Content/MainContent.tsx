@@ -1,3 +1,4 @@
+import styles from "./MainContent.module.scss"
 import React from "react";
 import { Page, PageElement } from "../../../pages/_types/PageShapes";
 import { MainView } from "../Grid/GridViews";
@@ -14,20 +15,35 @@ export const MainContent: React.FC<MainContentProps> = ({ page, type }) => {
     switch (type) {
       case "channel":
         return (
-          <MainView>
+          <>
             {page.content.map((item: PageElement, i: number) => (
-              <React.Fragment key={`${item}${i}`}>
+              <React.Fragment key={i}>
+                {item}
+              </React.Fragment>
+            ))}
+          </>
+        );
+      case "post":
+        return (
+          <article className={styles["post-content"]}>
+            {page.content.map((item: PageElement, i: number) => (
+              <React.Fragment key={i}>
                 {typeof item === "string" && <MDBlock>{item}</MDBlock>}
                 {typeof item === "object" && item}
               </React.Fragment>
             ))}
-          </MainView>
+          </article>
         );
       case "book cover":
         return [];
-      default: return null
+      default:
+        return null;
     }
   };
 
-  return (<Content />);
+  return (
+    <MainView>
+      <Content />
+    </MainView>
+  );
 };

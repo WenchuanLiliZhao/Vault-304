@@ -11,18 +11,6 @@ interface TopNavProps {
   page: Page;
 }
 
-const NavItems = [
-  {
-    title: "Channels",
-    items: MainChennels,
-  },
-
-  {
-    title: "Infos",
-    items: InfoChannels,
-  },
-];
-
 export const TopNav: React.FC<TopNavProps> = ({ page }) => {
   function ToggleAltNav() {
     const toggleArray = document.querySelectorAll(`.${styles["toggle"]}`);
@@ -35,6 +23,24 @@ export const TopNav: React.FC<TopNavProps> = ({ page }) => {
     const body = document.querySelector("body");
     body?.classList.toggle("alt-nav-open");
   }
+
+  const NavItems = [
+    {
+      title: "Channels",
+      items: MainChennels,
+    },
+
+    {
+      title: "Infos",
+      items: InfoChannels,
+    },
+  ];
+
+  const NavPath = [];
+  if (page.postInfo?.parent !== undefined) {
+    NavPath.push(page.postInfo.parent);
+  }
+  NavPath.push(page)
 
   return (
     <div className={styles["top-nav"]}>
@@ -50,13 +56,17 @@ export const TopNav: React.FC<TopNavProps> = ({ page }) => {
             <NavLinkToTop to={"/"} className={styles["site-title"]}>
               {SiteInfo.title}
             </NavLinkToTop>
-            <NavLinkToTop
-              to={`/${page.info.path}`}
-              className={styles["page-title"]}
-            >
-              <span className={styles["slash"]}>/</span>
-              <span className={styles["text"]}>{page.info.title}</span>
-            </NavLinkToTop>
+            {NavPath.map((item: Page, i: number) => (
+              <React.Fragment key={`${item}${i}`}>
+                <span className={styles["slash"]}>/</span>
+                <NavLinkToTop
+                  to={`/${page.info.path}`}
+                  className={styles["page-title"]}
+                >
+                  {item.info.title}
+                </NavLinkToTop>
+              </React.Fragment>
+            ))}
           </div>
           <div className={styles["right"]}></div>
         </div>
@@ -76,7 +86,8 @@ export const TopNav: React.FC<TopNavProps> = ({ page }) => {
           {NavItems.map((group, i: number) => (
             <div className={styles["channel-group"]} key={`${group}${i}`}>
               <div
-                className={`${styles["channel-group-title"]} ${FontSize.smallest}`}>
+                className={`${styles["channel-group-title"]} ${FontSize.smallest}`}
+              >
                 {group.title}
               </div>
               {Object.values(group.items).map((channel: Page, k: number) => (
@@ -86,7 +97,8 @@ export const TopNav: React.FC<TopNavProps> = ({ page }) => {
                 >
                   <NavLinkToTop
                     to={`/${channel.info.path}`}
-                    className={`${styles["channel-title"]} ${FontSize.small}`}>
+                    className={`${styles["channel-title"]} ${FontSize.small}`}
+                  >
                     {channel.info.title}
                     <HoverBox mode="onLight" />
                   </NavLinkToTop>

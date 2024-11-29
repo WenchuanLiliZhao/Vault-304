@@ -13,3 +13,20 @@
 .page-summary {
   margin-top: 16px;
 }
+
+.page-label {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: var(--color-text-em);
+  margin-bottom: 4px;
+}
+
+
+.page-authors-bar {
+  margin-top: 16px;
+
+  .author-name {
+    font-weight: bold;
+    color: var(--color-text-em);
+  }
+}

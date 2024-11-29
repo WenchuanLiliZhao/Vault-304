@@ -7,7 +7,7 @@ export const TestBook = CreateBook({
   // note: 注意，cover 最好单独定义，防止循环定义
   cover: {
     info: {
-      title: "Test Book",
+      title: "Zermelo–Fraenkel Set Theory",
       path: "test-book",
       summary: "ssss",
     },
