@@ -60,7 +60,7 @@ export const TopNav: React.FC<TopNavProps> = ({ page }) => {
               <React.Fragment key={`${item}${i}`}>
                 <span className={styles["slash"]}>/</span>
                 <NavLinkToTop
-                  to={`/${page.info.path}`}
+                  to={`/${item.info.path}`}
                   className={styles["page-title"]}
                 >
                   {item.info.title}
