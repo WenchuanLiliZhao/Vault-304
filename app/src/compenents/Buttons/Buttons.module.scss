@@ -5,6 +5,7 @@
   top: 0;
   left: 0;
   cursor: pointer;
+  
 
   &.onLight {
     &:hover {
@@ -30,6 +31,7 @@
 .text-button {
   text-align: center;
   color: var(--color-text-sec);
+  padding: 4px 0;
 
   &.fill {
     .container {
@@ -43,10 +45,10 @@
     }
   }
 
-  &.smallest {
-    padding: 4px 0;
-    .container {
-      padding: 8px;
-    }
-  }
+  // &.font-size-smaller {
+  //   padding: 4px 0;
+  //   .container {
+  //     padding: 8px;
+  //   }
+  // }
 }

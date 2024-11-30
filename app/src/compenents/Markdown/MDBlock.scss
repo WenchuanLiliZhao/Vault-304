@@ -1,7 +1,7 @@
 p {
   code {
     font-family: var(--ff-mono);
-    font-size: calc(14 / 17 * 1em);
+    font-size: calc(14 / 18 * 1em);
     vertical-align: baseline;
     background-color: var(--color-bg-sec);
     border: 1px dashed var(--color-border-main-trans);
@@ -19,14 +19,14 @@ pre {
   line-height: 1.5;
   border-radius: 0.4em;
 
-  background-color: var(--color-bg-pale);
+  // background-color: var(--color-bg-pale);
   // background-color: var(--color-bg-reverse-main);
   border: 1px solid var(--color-border-main);
 
   white-space: pre-wrap;
 
   code {
-    font-size: calc(14 / 17 * 1em);
+    font-size: calc(14 / 18 * 1em);
     padding: 2em !important;
     background-color: rgba(white, 0) !important;
   }

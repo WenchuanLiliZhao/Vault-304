@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Buttons.module.scss";
-import { FontSize } from "../../appStyles/font";
+import { FontSize, FontSizes } from "../../appStyles/font";
 
 interface HoverBoxPros {
   mode: "onLight" | "onDark";
@@ -36,12 +36,19 @@ export const TextButton: React.FC<TextButtonProps> = ({
           ${styles[`text-button`]}
           ${className}
           ${styles[fillMode]}
-          ${size}
-          ${styles[size]}
           ${inline && styles["inline"]}
         `}
+        // style={
+        //   size === FontSizes.smaller ? {
+        //     paddingTop: "12px"
+        //   } : {}
+        // }
       >
-        <div className={styles["container"]}>
+        <div className={styles["container"]} style={
+          size === String(FontSizes.smaller) ? {
+            padding: "8px"
+          } : {}
+        }>
           <span className={`material-symbols-outlined`}>{icon}</span>
           <span className={styles["text"]}>{text}</span>
           <HoverBox mode={onDark === true ? "onDark" : "onLight"} />

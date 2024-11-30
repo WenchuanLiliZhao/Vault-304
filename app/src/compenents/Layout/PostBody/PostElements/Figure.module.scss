@@ -1,0 +1,17 @@
+.figure {
+  margin: 2em 0;
+  &.default {
+    max-width: var(--spacing-max-para-width);
+  }
+
+  &.large {
+    max-width: 100%;
+  }
+
+  .caption {
+    max-width: var(--spacing-max-para-width);
+    font-size: calc(14/17 * 1em);
+    margin-top: 0.5em;
+    color: var(--color-text-sec);
+  }
+}
