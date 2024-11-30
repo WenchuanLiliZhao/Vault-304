@@ -5,7 +5,7 @@ import { HoverBox } from "../../Buttons/Buttons";
 import { DateFormatter } from "../../Functions/Date";
 import { MDBlock } from "../../Markdown/MDBlock";
 import { PageLink } from "../../Layout/_Functions/Links";
-import { FontSize } from "../../../appStyles/font";
+import { FontSizes } from "../../../appStyles/font";
 
 interface PostCardProps {
   post: Page;
@@ -20,15 +20,15 @@ export const PostCard: React.FC<PostCardProps> = ({ post }) => {
             {/* post header */}
             <div className={styles["card-header"]}>
               <div className={styles["post-update"]}>
-                <div className={`${styles["day-month"]} ${FontSize.large}`}>
+                <div className={`${styles["day-month"]} ${FontSizes.large}`}>
                   {DateFormatter(post.postInfo.update)[2]}{" "}
                   {DateFormatter(post.postInfo.update)[1]}
                 </div>
-                <div className={`${styles["year"]} ${FontSize.small}`}>
+                <div className={`${styles["year"]} ${FontSizes.small}`}>
                   {DateFormatter(post.postInfo.update)[0]}
                 </div>
               </div>
-              <div className={`${styles["post-label"]} ${FontSize.small}`}>
+              <div className={`${styles["post-label"]} ${FontSizes.small}`}>
                 {post.postInfo.label.info.title}
               </div>
             </div>
@@ -52,13 +52,13 @@ export const PostCard: React.FC<PostCardProps> = ({ post }) => {
             {/* post info */}
             <div className={styles["post-info"]}>
               <div className={styles["post-intro"]}>
-                <div className={`${styles["post-title"]} ${FontSize.medium}`}>{post.info.title}</div>
-                <div className={`${styles["post-summary"]} ${FontSize.small}`}>
+                <div className={`${styles["post-title"]} ${FontSizes.medium}`}>{post.info.title}</div>
+                <div className={`${styles["post-summary"]} ${FontSizes.small}`}>
                   <MDBlock>{post.info.summary}</MDBlock>
                 </div>
               </div>
 
-              <div className={`${styles["post-authors"]} ${FontSize.smallest}`}>
+              <div className={`${styles["post-authors"]} ${FontSizes.smaller}`}>
                 By{" "}
                 {post.postInfo.authors.map((author, k: number) => (
                   <React.Fragment key={k}>

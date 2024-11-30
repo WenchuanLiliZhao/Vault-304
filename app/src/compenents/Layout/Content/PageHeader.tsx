@@ -1,7 +1,7 @@
 import styles from "./PageHeader.module.scss";
 import React from "react";
 import { Page } from "../../../pages/_types/PageShapes";
-import { FontSize } from "../../../appStyles/font";
+import { FontSizes } from "../../../appStyles/font";
 import { MDBlock } from "../../Markdown/MDBlock";
 import { MainGridView, SecInMainGridView, MainView } from "../Grid/GridViews";
 import { PageType } from "../../../pages/_types/PageType";
@@ -16,7 +16,15 @@ export const PageHeader: React.FC<PageContentProps> = ({ page, type }) => {
   const Content = {
     title: (
       <>
-        <h1 className={`${styles["page-title"]} ${FontSize.largest}`}>
+        <h1 className={`${styles["page-title"]} ${FontSizes.pageTitle}`}>
+          {page.info.title}
+        </h1>
+      </>
+    ),
+
+    title_sub: (
+      <>
+        <h1 className={`${styles["page-title"]} ${FontSizes.pageTitle2}`}>
           {page.info.title}
         </h1>
       </>
@@ -25,7 +33,7 @@ export const PageHeader: React.FC<PageContentProps> = ({ page, type }) => {
     summary: (
       <>
         {page.info.summary && (
-          <div className={`${styles["page-summary"]} ${FontSize.medium}`}>
+          <div className={`${styles["page-summary"]} ${FontSizes.medium}`}>
             <MDBlock>{page.info.summary}</MDBlock>
           </div>
         )}
@@ -35,7 +43,7 @@ export const PageHeader: React.FC<PageContentProps> = ({ page, type }) => {
     label: (
       <>
         {page.postInfo && (
-          <div className={`${styles["page-label"]} ${FontSize.large}`}>
+          <div className={`${styles["page-label"]} ${FontSizes.large}`}>
             <PageLink
               link={
                 page.postInfo.parent !== undefined
@@ -55,7 +63,7 @@ export const PageHeader: React.FC<PageContentProps> = ({ page, type }) => {
     authors: (
       <>
         {page.postInfo?.authors && (
-          <div className={`${styles["page-authors-bar"]} ${FontSize.small}`}>
+          <div className={`${styles["page-authors-bar"]} ${FontSizes.small}`}>
             By{" "}
             {page.postInfo.authors.map((item, i: number) => (
               <React.Fragment key={i}>
@@ -86,11 +94,11 @@ export const PageHeader: React.FC<PageContentProps> = ({ page, type }) => {
     switch (type) {
       case "post":
         return (
-          <>
+          <div className={styles["post-header-container"]}>
             {Content.label}
-            {Content.title}
+            {Content.title_sub}
             {Content.authors}
-          </>
+          </div>
         );
 
       case "book cover":
@@ -98,10 +106,12 @@ export const PageHeader: React.FC<PageContentProps> = ({ page, type }) => {
 
       default:
         return (
-          <>
-            {Content.title}
-            {Content.summary}
-          </>
+          <MainGridView>
+            <SecInMainGridView className={styles["head-content"]} initSpan={8}>
+              {Content.title}
+              {Content.summary}
+            </SecInMainGridView>
+          </MainGridView>
         );
     }
   };
@@ -109,11 +119,7 @@ export const PageHeader: React.FC<PageContentProps> = ({ page, type }) => {
   return (
     <header className={styles["page-header"]}>
       <MainView>
-        <MainGridView>
-          <SecInMainGridView className={styles["head-content"]} initSpan={8}>
-            <ContentByCase />
-          </SecInMainGridView>
-        </MainGridView>
+        <ContentByCase />
       </MainView>
     </header>
   );

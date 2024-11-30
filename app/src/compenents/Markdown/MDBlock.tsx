@@ -1,3 +1,5 @@
+import "./MDBlock.scss"
+
 import React from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkMath from 'remark-math';
@@ -7,7 +9,6 @@ import remarkGfm from 'remark-gfm';
 import rehypeHighlight from 'rehype-highlight';
 // import 'highlight.js/styles/github.css'; // Use a highlight.js theme of your choice
 import 'highlight.js/styles/github.css'; // Hardcoded theme
-import { CodeBlock } from './MDComponents/CodeBlock';
 
 interface Props {
   children: string;
@@ -21,7 +22,7 @@ export const MDBlock: React.FC<Props> = ({ children, className }) => {
       remarkPlugins={[remarkMath, remarkGfm]}
       rehypePlugins={[rehypeKatex, rehypeHighlight]}
       components={{
-        pre: ({children}) => <CodeBlock>{children}</CodeBlock>
+        
       }}
     >
       {children}

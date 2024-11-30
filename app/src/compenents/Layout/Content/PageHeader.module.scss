@@ -1,6 +1,10 @@
 .page-header {
   padding-top: 64px;
   padding-bottom: 48px;
+
+  .post-header-container {
+    max-width: var(--spacing-max-para-width);
+  }
 }
 
 .page-title {

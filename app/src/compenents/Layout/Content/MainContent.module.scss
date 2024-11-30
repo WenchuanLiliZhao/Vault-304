@@ -1,12 +1,12 @@
 // the styles of code is written in // note: CodeBlock.tsx
 
 .post-content {
-  font-family: var(--ff-serif);
-  font-size: 18px;
+  font-size: 17px;
 
   pre,
   p {
     grid-column: span 8;
+    max-width: var(--spacing-max-para-width);
   }
 
   p {
@@ -15,5 +15,6 @@
     // text-align: justify;
     // -webkit-hyphens: auto;
     // hyphens: auto;
+    margin-top: 0.5em;
   }
 }

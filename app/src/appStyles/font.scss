@@ -1,6 +1,6 @@
 :root {
-  --ff-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica,
-    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
+  --ff-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial,
+    sans-serif, "Apple Color Emoji", "Segoe UI Emoji", sans-serif;
 
   --ff-serif: "Times New Roman", Times, serif;
 
@@ -67,6 +67,16 @@ em {
   }
 }
 
+.font-size-largest-2 {
+  font-size: 48px;
+  line-height: 56px;
+
+  @media only screen and (max-width: 640px) {
+    font-size: 40px;
+    line-height: 48px;
+  }
+}
+
 .font-size-larger {
   font-size: 24px;
   line-height: 32px;
@@ -87,7 +97,7 @@ em {
   line-height: 22px;
 }
 
-.font-size-smallest {
+.font-size-smaller {
   font-size: 12px;
   line-height: 20px;
 }

@@ -6,7 +6,7 @@ import { HoverBox, TextButton } from "../../Buttons/Buttons";
 import { AsideCalendar } from "./AsideComponents/AsideCalendar";
 import { GetTodayDateArray } from "../../Functions/Date";
 import { SiteInfo } from "../../../SiteInfo";
-import { FontSize } from "../../../appStyles/font";
+import { FontSizes } from "../../../appStyles/font";
 import { AsideInfoBox, AsideKeywords, AuthorsInfoBox } from './AsideComponents/AsideArticle';
 import { PageType } from "../../../pages/_types/PageType";
 import { AsideToc } from "./AsideComponents/AsideToc";
@@ -53,7 +53,7 @@ export const Aside: React.FC<AsideProps> = ({ page, type }) => {
               SiteInfo["about & location"],
               <TextButton
                 text={"Contact Me"}
-                size={"smallest"}
+                size={FontSizes.smaller}
                 fillMode={"fill"}
                 onDark={false}
                 inline={false}
@@ -105,7 +105,7 @@ export const Aside: React.FC<AsideProps> = ({ page, type }) => {
           ))}
         </div>
 
-        <div className={`${styles["aside-footer"]} ${FontSize.smallest}`}>
+        <div className={`${styles["aside-footer"]} ${FontSizes.smaller}`}>
           {SiteInfo.title} @{GetTodayDateArray()[0]}
         </div>
       </div>

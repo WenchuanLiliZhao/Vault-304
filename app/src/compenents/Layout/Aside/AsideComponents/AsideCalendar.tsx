@@ -1,7 +1,7 @@
 import styles from "./AsideCalendar.module.scss";
 import React from "react";
 import { HoverBox, TextButton } from "../../../Buttons/Buttons";
-import { FontSize } from "../../../../appStyles/font";
+import { FontSizes } from "../../../../appStyles/font";
 
 // Helper function to get the number of days in a month
 const getDaysInMonth = (year: number, month: number): number => {
@@ -107,7 +107,7 @@ export const AsideCalendar: React.FC = () => {
   }
 
   return (
-    <div className={`${styles["aside-calendar"]} ${FontSize.smallest}`}>
+    <div className={`${styles["aside-calendar"]} ${FontSizes.smaller}`}>
       <div className={styles[`calendar-title`]}>{`${getMonthName(
         currentMonth
       )} ${currentYear}`}</div>
@@ -129,7 +129,7 @@ export const AsideCalendar: React.FC = () => {
       <TextButton
         className={styles["view-calendar-btn"]}
         text={"View Calendar"}
-        size={"smallest"}
+        size={FontSizes.smaller}
         fillMode={"fill"}
         onDark={false}
         inline={false}

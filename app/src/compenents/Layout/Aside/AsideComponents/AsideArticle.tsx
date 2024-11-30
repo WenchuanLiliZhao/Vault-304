@@ -5,7 +5,7 @@ import {
   PageElement,
 } from "../../../../pages/_types/PageShapes";
 import styles from "./AsideArticle.module.scss";
-import { FontSize } from "../../../../appStyles/font";
+import { FontSizes } from "../../../../appStyles/font";
 import { MDBlock } from "../../../Markdown/MDBlock";
 import { PageLink } from "../../_Functions/Links";
 import { DateFormatter } from "../../../Functions/Date";
@@ -24,7 +24,7 @@ export const AsideInfoBox: React.FC<AsideArticleProps> = ({
 }) => {
   return (
     <>
-      <div className={`${styles["aside-info-box"]} ${FontSize.smallest}`}>
+      <div className={`${styles["aside-info-box"]} ${FontSizes.smaller}`}>
         <div className={styles["title-bar"]}>
           <span className={styles["title"]}>{title}</span>
           {titleDeco && (

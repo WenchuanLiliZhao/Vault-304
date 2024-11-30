@@ -1,7 +1,7 @@
 import styles from "./MainContent.module.scss";
 import React from "react";
 import { Page, PageElement } from "../../../pages/_types/PageShapes";
-import { MainGridView, MainView } from "../Grid/GridViews";
+import { MainView } from "../Grid/GridViews";
 import { MDBlock } from "../../Markdown/MDBlock";
 import { PageType } from "../../../pages/_types/PageType";
 
@@ -24,14 +24,12 @@ export const MainContent: React.FC<MainContentProps> = ({ page, type }) => {
       case "post":
         return (
           <article className={`${styles["post-content"]}`}>
-            <MainGridView>
-              {page.content.map((item: PageElement, i: number) => (
-                <React.Fragment key={i}>
-                  {typeof item === "string" && <MDBlock>{item}</MDBlock>}
-                  {typeof item === "object" && item}
-                </React.Fragment>
-              ))}
-            </MainGridView>
+            {page.content.map((item: PageElement, i: number) => (
+              <React.Fragment key={i}>
+                {typeof item === "string" && <MDBlock>{item}</MDBlock>}
+                {typeof item === "object" && item}
+              </React.Fragment>
+            ))}
           </article>
         );
       case "book cover":

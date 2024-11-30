@@ -12,7 +12,7 @@ export const HoverBox: React.FC<HoverBoxPros> = ({ mode }) => {
 
 interface TextButtonProps {
   text: string;
-  size: keyof typeof FontSize;
+  size: FontSize;
   fillMode: "fill" | "outline";
   onDark: boolean;
   inline: boolean;

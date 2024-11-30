@@ -1,5 +1,5 @@
 import React from "react";
-import { FontSize } from "../../../appStyles/font";
+import { FontSizes } from "../../../appStyles/font";
 import { Topics } from "../../../pages/_types/Topics";
 import { Channels } from "../../../pages/channels/Channels";
 import { SiteInfo } from "../../../SiteInfo";
@@ -39,15 +39,15 @@ export const Footer = () => {
         <MainView>
           <MainGridView className={styles["footer-body"]}>
             <div className={styles["site-info"]}>
-              <div className={`${styles["site-title"]} ${FontSize.large}`}>
+              <div className={`${styles["site-title"]} ${FontSizes.large}`}>
                 {SiteInfo.title}
               </div>
-              <div className={`${styles["site-summary"]} ${FontSize.small}`}>
+              <div className={`${styles["site-summary"]} ${FontSizes.small}`}>
                 <MDBlock>{SiteInfo.summary}</MDBlock>
               </div>
             </div>
 
-            <div className={`${styles["footer-channels"]} ${FontSize.small}`}>
+            <div className={`${styles["footer-channels"]} ${FontSizes.small}`}>
               <MainGridView className={styles["foot-channels-grid"]}>
                 {footerLinks.map((group, i: number) => (
                   <div key={i} className={styles["group"]}>
@@ -68,7 +68,7 @@ export const Footer = () => {
             </div>
           </MainGridView>
 
-          <div className={`${styles["foot-end"]} ${FontSize.smallest}`}>
+          <div className={`${styles["foot-end"]} ${FontSizes.smaller}`}>
             <div className={styles["left"]}>
               ©Wenchuan Zhao {GetTodayDateArray()[0]}
             </div>

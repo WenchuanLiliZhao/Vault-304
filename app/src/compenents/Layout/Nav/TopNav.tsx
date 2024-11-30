@@ -5,7 +5,7 @@ import { SiteInfo } from "../../../SiteInfo";
 import { PageNavLink } from "../_Functions/Links";
 import { Channels, InfoChannels, MainChennels } from "../../../pages/channels/Channels";
 import { HoverBox } from "../../Buttons/Buttons";
-import { FontSize } from "../../../appStyles/font";
+import { FontSizes } from "../../../appStyles/font";
 
 interface TopNavProps {
   page: Page;
@@ -52,7 +52,7 @@ export const TopNav: React.FC<TopNavProps> = ({ page }) => {
         </div>
         {/* right */}
         <div className={styles["nav-body"]}>
-          <div className={`${styles["page-path"]} ${FontSize.small}`}>
+          <div className={`${styles["page-path"]} ${FontSizes.small}`}>
             <PageNavLink link={Channels.Home} className={styles["site-title"]}>
               {SiteInfo.title}
             </PageNavLink>
@@ -86,7 +86,7 @@ export const TopNav: React.FC<TopNavProps> = ({ page }) => {
           {NavItems.map((group, i: number) => (
             <div className={styles["channel-group"]} key={`${group}${i}`}>
               <div
-                className={`${styles["channel-group-title"]} ${FontSize.smallest}`}
+                className={`${styles["channel-group-title"]} ${FontSizes.smaller}`}
               >
                 {group.title}
               </div>
@@ -97,7 +97,7 @@ export const TopNav: React.FC<TopNavProps> = ({ page }) => {
                 >
                   <PageNavLink
                     link={channel}
-                    className={`${styles["channel-title"]} ${FontSize.small}`}
+                    className={`${styles["channel-title"]} ${FontSizes.small}`}
                   >
                     {channel.info.title}
                     <HoverBox mode="onLight" />
