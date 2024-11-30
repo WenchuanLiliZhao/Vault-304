@@ -5,11 +5,11 @@
 p {
   code {
     font-family: var(--ff-mono);
-    font-size: 0.875rem;
+    font-size: calc(14 / 18 * 1em);
     vertical-align: baseline;
     background-color: var(--color-bg-darken);
-    padding: 0.15rem 0.3rem;
-    border-radius: 0.3rem;
+    padding: 0.15em 0.3em;
+    border-radius: 0.3em;
   }
 }
 
@@ -27,8 +27,8 @@ p {
 
   .code-block-content {
     code {
-      font-size: 0.875rem;
-      padding: 2rem;
+      font-size: calc(14 / 18 * 1em);
+      padding: 2em;
       background-color: rgba(white, 0)
     }
   }

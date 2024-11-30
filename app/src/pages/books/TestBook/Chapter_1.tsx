@@ -26,7 +26,7 @@ export const Chapter_1: Page = {
 
   content: [
     `
-Nam vehicula dignissim enim sed bibendum \`this is code\`. Ut gravida lorem justo, non aliquam libero condimentum quis. Phasellus auctor nisl at magna euismod, eu pharetra est porttitor. Vivamus convallis orci vitae sollicitudin pretium. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam tempor rhoncus mauris eu gravida. Nam faucibus lacus eget eleifend eleifend. Nam sed posuere dolor, vel dictum orci. Integer laoreet, massa ac consectetur volutpat, sem risus elementum leo, ut tincidunt nibh lectus in nunc. Vivamus non elit maximus ipsum euismod dignissim. Sed nibh ipsum, sodales sed metus id, sodales bibendum massa. Proin finibus nec nulla quis eleifend.
+Nam vehicula dignissim $x \\in X$ enim sed bibendum \`this is code\`. Ut gravida lorem justo, non aliquam libero condimentum quis. Phasellus auctor nisl at magna euismod, eu pharetra est porttitor. Vivamus convallis orci vitae sollicitudin pretium. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam tempor rhoncus mauris eu gravida. Nam faucibus lacus eget eleifend eleifend. Nam sed posuere dolor, vel dictum orci. Integer laoreet, massa ac consectetur volutpat, sem risus elementum leo, ut tincidunt nibh lectus in nunc. Vivamus non elit maximus ipsum euismod dignissim. Sed nibh ipsum, sodales sed metus id, sodales bibendum massa. Proin finibus nec nulla quis eleifend.
 `,
     `
 \`\`\`typescript
