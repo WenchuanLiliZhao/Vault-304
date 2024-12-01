@@ -1,16 +1,26 @@
 .page-layout {
   .main-screen {
-    display: flex;
-    width: 100%;
+    .left {
+      @media only screen and (max-width: 800px) {
+        display: none;
+      }
+    }
+
+    .mid {
+      padding-left: calc(var(--spacing-nav-size) * 1);
+      padding-right: var(--spacing-aside-size);
+
+      @media only screen and (max-width: 1400px) {
+        padding-right: 0;
+      }
+
+      @media only screen and (max-width: 800px) {
+        padding-left: 0;
+      }
+    }
   }
 
-  .left, .right {
-    flex: 0 0 auto
-  }
-
-  .mid {
-    flex: 1
-  }
+  
 }
 
 .main {

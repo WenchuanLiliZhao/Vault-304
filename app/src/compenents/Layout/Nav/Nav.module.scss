@@ -1,8 +1,5 @@
 .nav {
   width: var(--spacing-nav-size);
-  @media only screen and (max-width: 800px) {
-    display: none;
-  }
 
   .fix-container {
     writing-mode: vertical-lr;
