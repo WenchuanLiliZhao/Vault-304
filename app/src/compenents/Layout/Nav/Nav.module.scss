@@ -1,5 +1,6 @@
 .nav {
   width: var(--spacing-nav-size);
+  z-index: var(--z-index-nav);
 
   .fix-container {
     writing-mode: vertical-lr;
