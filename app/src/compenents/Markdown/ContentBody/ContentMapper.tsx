@@ -1,4 +1,4 @@
-import styles from "./ContentBody.module.scss"
+import styles from "./ContentMapper.module.scss"
 
 import React from "react";
 import { Page, PageElement } from "../../../pages/_types/PageShapes";
@@ -8,7 +8,7 @@ interface PostBodyProps {
   page: Page;
 }
 
-export const PostBody: React.FC<PostBodyProps> = ({ page }) => {
+export const ContentMapper: React.FC<PostBodyProps> = ({ page }) => {
   return (
     <article className={`${styles["post-content"]}`}>
       {page.content.map((item: PageElement, i: number) => (

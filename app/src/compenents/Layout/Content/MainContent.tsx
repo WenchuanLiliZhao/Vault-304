@@ -3,7 +3,7 @@ import React from "react";
 import { Page } from "../../../pages/_types/PageShapes";
 import { MainGridView, MainView } from "../Grid/GridViews";
 import { PageType } from "../../../pages/_types/PageType";
-import { PostBody } from "../../Markdown/ContentBody/ContentBody";
+import { ContentMapper } from "../../Markdown/ContentBody/ContentMapper";
 import { FontSizes } from "../../../appStyles/font";
 import { MDBlock } from "../../Markdown/MDBlock";
 import { PageLink } from "../_Functions/Links";
@@ -24,11 +24,11 @@ export const MainContent: React.FC<MainContentProps> = ({ page, type }) => {
             {/* {page.content.map((item: PageElement, i: number) => (
               <React.Fragment key={i}>{item}</React.Fragment>
             ))} */}
-            <PostBody page={page} />
+            <ContentMapper page={page} />
           </>
         );
       case "post":
-        return <PostBody page={page} />;
+        return <ContentMapper page={page} />;
       case "book cover":
         return (
           <>

@@ -1,4 +1,4 @@
-import { Figure } from "../../../compenents/Markdown/ContentBody/ContentBodyElements/Figure";
+import { Figure } from "../../../compenents/Markdown/ContentBody/ContentElements/Figure";
 import { Page, Roles } from "../../_types/PageShapes";
 import { Topics } from "../../_types/Topics";
 import { People } from "../../People/_PeopleEnum";
