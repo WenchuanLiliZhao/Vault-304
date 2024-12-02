@@ -3,6 +3,8 @@
   grid-column: span 4;
   background-color: var(--color-bg-sec);
 
+  font-family: var(--ff-sans);
+
   $imgTransition: 0.5s;
   &:hover {
     .post-cover .img {

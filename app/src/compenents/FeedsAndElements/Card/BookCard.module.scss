@@ -2,6 +2,7 @@
   display: block;
   background-color: var(--color-bg-reverse-main);
   color: var(--color-text-reverse-main);
+  font-family: var(--ff-sans);
 
   .book-cover {
     padding-top: calc(454 / 384 * 100%);

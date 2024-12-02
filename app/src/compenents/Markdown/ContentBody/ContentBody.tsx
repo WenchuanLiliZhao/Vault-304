@@ -1,4 +1,4 @@
-import styles from "./PostBody.module.scss"
+import styles from "./ContentBody.module.scss"
 
 import React from "react";
 import { Page, PageElement } from "../../../pages/_types/PageShapes";
