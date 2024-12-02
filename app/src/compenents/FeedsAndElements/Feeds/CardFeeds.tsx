@@ -3,6 +3,7 @@ import React from "react";
 import { Page } from "../../../pages/_types/PageShapes";
 import { MainGridView } from "../../Layout/Grid/GridViews";
 import { PostCard } from "../Card/PostCard";
+import { BookCard } from "../Card/BookCard";
 
 export type SortPostMode = "default" | "date" | "a-z"
 
@@ -52,4 +53,19 @@ export const PostFeed: React.FC<PostFeedProps> = ({ posts, className }) => {
   );
 };
 
-// interface
+interface BookFeedProps {
+  bookCovers: Page[];
+  className?: string
+}
+
+export const BookFeed: React.FC<BookFeedProps> = ({bookCovers, className}) => {
+  return (
+    <MainGridView className={`${styles["post-feed"]} ${className}`}>
+      {bookCovers.map((bookCover, i: number) => (
+        <div key={i} className={styles["post-container"]}>
+          <BookCard bookCover={bookCover} />
+        </div>
+      ))}
+    </MainGridView>
+  )
+}

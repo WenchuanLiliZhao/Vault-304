@@ -1,4 +1,7 @@
-import { PostFeed, SortPosts } from "../../../compenents/FeedsAndElements/Feeds/CardFeeds";
+import {
+  PostFeed,
+  SortPosts,
+} from "../../../compenents/FeedsAndElements/Feeds/CardFeeds";
 import { Page } from "../../_types/PageShapes";
 import { BookPages } from "../../books/_Collections";
 

@@ -6,9 +6,22 @@ import { PageLayout } from "./compenents/Layout/PageLayout";
 import { Books } from "./pages/books/_Collections";
 import React from "react";
 import { People } from "./pages/People/_PeopleEnum";
+import { SiteInfo } from "./SiteInfo";
+import { DateFormatter, GetTodayDateArray } from "./compenents/Functions/Date";
 
 function App() {
-  console.log(Books.TestBook.cover.postInfo?.authors[0].data.info.title)
+  const welcome = `Welcome to ${SiteInfo.title}`;
+
+  console.log(
+    `
+\n${"*".repeat(welcome.length + 4)}\n* ${welcome} *\n${"*".repeat(
+      welcome.length + 4
+    )}
+${SiteInfo["about & location"]}
+❤️ ${DateFormatter(GetTodayDateArray())[1]} ${DateFormatter(GetTodayDateArray())[2]} ${DateFormatter(GetTodayDateArray())[0]} @Shanghai ❤️
+
+`
+  );
 
   return (
     <BrowserRouter>

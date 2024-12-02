@@ -1,0 +1,36 @@
+.book-card {
+  display: block;
+  background-color: var(--color-bg-reverse-main);
+  color: var(--color-text-reverse-main);
+
+  .book-cover {
+    padding-top: calc(454 / 384 * 100%);
+
+    .book-cover-img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+    }
+  }
+
+  .book-cover-info {
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 24px;
+
+    .book-title {
+      font-weight: bold;
+      text-transform: uppercase;
+      color: var(--color-text-reverse-em);
+    }
+
+    .book-authors {
+      .author-name {
+        font-weight: bold;
+        color: var(--color-text-reverse-em);
+      }
+    }
+  }
+}
