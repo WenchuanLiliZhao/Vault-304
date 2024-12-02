@@ -2,7 +2,7 @@ import React from "react";
 import { Page, PageElement } from "../../../pages/_types/PageShapes";
 import { MainView } from "../Grid/GridViews";
 import { PageType } from "../../../pages/_types/PageType";
-import { PostBody } from "../PostBody/PostBody";
+import { PostBody } from "../../Markdown/PostBody/PostBody";
 
 interface MainContentProps {
   page: Page;

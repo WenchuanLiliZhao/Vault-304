@@ -7,18 +7,34 @@
   *:first-child {
     margin-top: 0;
   }
-  
-  p, h1, h2, h3, h4, h5, h6 {
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ol,
+  ul {
     max-width: var(--spacing-max-para-width);
   }
 
-  p {
+  p,
+  li {
     font-size: 1em;
     line-height: 1.5;
     // text-align: justify;
     // -webkit-hyphens: auto;
     // hyphens: auto;
+  }
+
+  p {
     margin: 0.5em 0;
+
+    a {
+      text-decoration: underline;
+    }
   }
 
   h2 {
@@ -41,5 +57,25 @@
     margin-top: 1.25em;
     margin-bottom: 0.5em;
     // font-family: var(--ff-sans);
+  }
+
+  // ================================
+  // list
+  // ================================
+  li {
+    margin-left: 1.5em;
+    margin-top: 0.5em !important;
+  }
+
+  ul {
+    > li {
+      list-style: disc;
+    }
+  }
+
+  ol {
+    > li {
+      list-style: decimal;
+    }
   }
 }

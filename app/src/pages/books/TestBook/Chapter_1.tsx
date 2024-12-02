@@ -1,4 +1,4 @@
-import { Figure } from "../../../compenents/Layout/PostBody/PostElements/Figure";
+import { Figure } from "../../../compenents/Markdown/PostBody/PostElements/Figure";
 import { Page, Roles } from "../../_types/PageShapes";
 import { Topics } from "../../_types/Topics";
 import { People } from "../../People/_PeopleEnum";
@@ -30,8 +30,27 @@ export const Chapter_1: Page = {
 
 Let $X$ be a set and let $\\mathcal T$ be a topology on $X$; i.e., $(X, \\mathcal T)$ is a *topological space*. Let $x$ be an element of $X$.
 
+I have a local directory:
 
-Nam vehicula dignissim $x \\in X$ enim sed bibendum \`this is code\`. Ut gravida lorem justo, non aliquam libero condimentum quis. Phasellus auctor nisl at magna euismod, eu pharetra est porttitor. Vivamus convallis orci vitae sollicitudin pretium. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam tempor
+- MyFolder
+  1. Folder 1
+  2. Folder 2
+      - …
+  3. Folder 3
+  4. Folder 1
+  5. Folder 2
+      - …
+  6. Folder 3
+  7. Folder 1
+  8. Folder 2
+      - …
+  9. Folder 3
+  10. Folder 1
+  11. Folder 2
+      - …
+  12. Folder 3
+
+Nam vehicula [dignissim]() $x \\in X$ enim sed bibendum \`this is code\`. Ut gravida lorem justo, non aliquam libero condimentum quis. Phasellus auctor nisl at magna euismod, eu pharetra est porttitor. Vivamus convallis orci vitae sollicitudin pretium. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam tempor
 
 ## The Axiom of Choice
 
