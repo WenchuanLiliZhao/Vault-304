@@ -1,6 +1,24 @@
 .book-cover-info-container {
+  row-gap: 24px;
+
   .book-cover {
     grid-column: span 3;
+
+    @media only screen and (max-width: 1200px) {
+      grid-column: span 4;
+    }
+
+    @media only screen and (max-width: 800px) {
+      grid-column: span 6;
+    }
+
+    @media only screen and (max-width: 600px) {
+      grid-column: span 8;
+    }
+
+    @media only screen and (max-width: 500px) {
+      grid-column: span 12;
+    }
 
     .caption {
       margin-top: 8px;
@@ -10,6 +28,14 @@
 
   .book-summary {
     grid-column: span 7;
+
+    @media only screen and (max-width: 1200px) {
+      grid-column: span 8;
+    }
+
+    @media only screen and (max-width: 800px) {
+      grid-column: span 12;
+    }
 
     *:first-child {
       margin-top: 0;
