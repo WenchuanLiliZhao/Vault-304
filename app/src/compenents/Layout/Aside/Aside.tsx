@@ -2,14 +2,19 @@ import styles from "./Aside.module.scss";
 
 import React from "react";
 import { Page } from "../../../pages/_types/PageShapes";
-import { HoverBox, TextButton } from "../../Buttons/Buttons";
+import { HoverBox, TextBtn } from "../../Buttons/Buttons";
 import { AsideCalendar } from "./AsideComponents/AsideCalendar";
 import { GetTodayDateArray } from "../../Functions/Date";
 import { SiteInfo } from "../../../SiteInfo";
 import { FontSizes } from "../../../appStyles/font";
-import { AsideInfoBox, AsideKeywords, AuthorsInfoBox } from './AsideComponents/AsideArticle';
+import {
+  AsideInfoBox,
+  AsideKeywords,
+  AuthorsInfoBox,
+} from "./AsideComponents/AsideArticle";
 import { PageType } from "../../../pages/_types/PageType";
 import { AsideToc } from "./AsideComponents/AsideToc";
+import { Channels } from "../../../pages/channels/Channels";
 
 interface AsideProps {
   page: Page;
@@ -51,13 +56,16 @@ export const Aside: React.FC<AsideProps> = ({ page, type }) => {
             title={"About & Location"}
             content={[
               SiteInfo["about & location"],
-              <TextButton
-                text={"Contact Me"}
-                size={FontSizes.smaller}
-                fillMode={"fill"}
-                onDark={false}
-                inline={false}
-              />,
+              <>
+                <TextBtn
+                  text={"About"}
+                  size={FontSizes.smaller}
+                  fillMode={"fill"}
+                  onDark={false}
+                  inline={false}
+                  link={Channels.About}
+                />
+              </>,
             ]}
           />,
           <AsideInfoBox
@@ -76,7 +84,15 @@ export const Aside: React.FC<AsideProps> = ({ page, type }) => {
           <AuthorsInfoBox page={page} />,
         ];
       case "book cover":
-        return [];
+        return [
+          <AsideToc page={page} />,
+          <AsideInfoBox
+            title={"Summary of the Page"}
+            content={[page.info.summary]}
+          />,
+          <AsideKeywords page={page} />,
+          <AuthorsInfoBox page={page} />,
+        ];
       default:
         return null;
     }

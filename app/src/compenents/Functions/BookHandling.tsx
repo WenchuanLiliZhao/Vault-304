@@ -2,7 +2,7 @@
 // 创建书籍
 // ========================
 
-import { Page, Subpages } from "../../pages/_types/PageShapes";
+import { Page, Role, Subpages } from "../../pages/_types/PageShapes";
 import { SortPostMode, SortPosts } from "../FeedsAndElements/Feeds/CardFeeds";
 
 // 定义 CorrectedBook 类型
@@ -24,29 +24,61 @@ type BookA<T extends Subpages> = CorrectedBook & {
 };
 
 // 重新实现 `CreateBook` 函数
+// Corrected and updated CreateBook function
 export function CreateBook<T extends Subpages>({
   cover,
   subpages,
   sortTocBy,
 }: BookParams<T>): BookA<T> {
+  const allAuthors: { data: Page; roles: Role[] }[] = []; // Collect all authors here
+  const allTags: string[] = []
+
   Object.values(subpages).forEach((subpage) => {
-    // 对所有子页面重新组织路径
+    // Reorganize paths for subpages
     // subpage.info.key = `${cover.info.key}/${subpage.info.key}`;
 
-    if (subpage.postInfo) {
-      // 加载目录
+    if (subpage.postInfo && cover.postInfo) {
+      // Add subpage's authors to the collection
+      allAuthors.push(...subpage.postInfo.authors);
+      allTags.push(...subpage.postInfo.tags)
+
+      // Load TOC (table of contents)
       subpage.postInfo.toc = SortPosts({
         posts: subpages,
         sortby: sortTocBy,
       });
 
-      // 到底属于哪本书
+      cover.postInfo.toc = SortPosts({
+        posts: subpages,
+        sortby: sortTocBy,
+      });
+
+      // Assign parent to the subpage
       subpage.postInfo.parent = cover;
     }
   });
 
+  // Deduplicate authors based on `data` (as it refers to a `Page`)
+  const uniqueAuthors = Array.from(
+    new Map(allAuthors.map((author) => [author.data.info.path, author])).values()
+  );
+
+  const uniqueTags = Array.from(
+    new Map(allTags.map((tag) => [tag, tag])).values()
+  )
+
+  // Assign deduplicated authors to the cover's `postInfo`
+  if (cover.postInfo) {
+    cover.postInfo = {
+      ...(cover.postInfo || {}),
+      authors: uniqueAuthors,
+      tags: uniqueTags,
+    };
+  }
+
   return { cover, subpages, sortTocBy };
 }
+
 
 // ========================
 // 合并书籍页面

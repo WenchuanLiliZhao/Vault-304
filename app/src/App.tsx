@@ -8,6 +8,8 @@ import React from "react";
 import { People } from "./pages/People/_PeopleEnum";
 
 function App() {
+  console.log(Books.TestBook.cover.postInfo?.authors[0].data.info.title)
+
   return (
     <BrowserRouter>
       <Routes>

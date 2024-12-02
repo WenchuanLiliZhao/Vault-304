@@ -22,7 +22,7 @@ export const AsideToc: React.FC<Props> = ({ page }) => {
             link={page.postInfo?.parent ? page.postInfo.parent : page}
             className={`${styles["title"]} ${FontSizes.large}`}
           >
-            {page.postInfo?.parent?.info.title}
+            {page.postInfo?.parent ? page.postInfo?.parent?.info.title : page.info.title}
           </PageLink>
           <div className={`${styles["toc-list"]} ${FontSizes.smaller}`}>
             {page.postInfo?.toc?.map((item: Page, i: number) => (

@@ -66,19 +66,21 @@ export const AsideKeywords: React.FC<AsideKeywordsProps> = ({ page }) => {
         title={title}
         titleDeco={`(${page.postInfo?.tags.length})`}
         content={[
-          <div className={styles["keywords"]}>
-            {page.postInfo?.tags.length !== 0 ? (
-              page.postInfo?.tags.map((item: string) => (
-                <div key={`${item}`} className={styles["keyword"]}>
-                  {item}
-                  <HoverBox mode="onLight" />
-                </div>
-              ))
-            ) : (
-              <p className={styles["hint-no-keywords"]}>
-                This page currently does not contain any keywords.
-              </p>
-            )}
+          <div className={styles["keywords-box"]}>
+            <div className={styles["keywords"]}>
+              {page.postInfo?.tags.length !== 0 ? (
+                page.postInfo?.tags.map((item: string) => (
+                  <div key={`${item}`} className={styles["keyword"]}>
+                    {item}
+                    <HoverBox mode="onLight" />
+                  </div>
+                ))
+              ) : (
+                <p className={styles["hint-no-keywords"]}>
+                  This page currently does not contain any keywords.
+                </p>
+              )}
+            </div>
           </div>,
         ]}
       />

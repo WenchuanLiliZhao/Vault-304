@@ -1,6 +1,6 @@
 import styles from "./AsideCalendar.module.scss";
 import React from "react";
-import { HoverBox, TextButton } from "../../../Buttons/Buttons";
+import { HoverBox, TextBtn } from "../../../Buttons/Buttons";
 import { FontSizes } from "../../../../appStyles/font";
 
 // Helper function to get the number of days in a month
@@ -90,7 +90,7 @@ export const AsideCalendar: React.FC = () => {
     const nextFillDays = 7 - nextDaysStart;
     for (let i = 1; i <= nextFillDays; i++) {
       calendarDays.push(
-        <DayData key={`next-${i}`} className="not-current-month">
+        <DayData key={`next-${i}`} className={styles["not-current-month"]}>
           {i}
         </DayData>
       );
@@ -126,7 +126,7 @@ export const AsideCalendar: React.FC = () => {
         <div className={styles[`calendar-body`]}>{weeks}</div>
       </div>
 
-      <TextButton
+      <TextBtn
         className={styles["view-calendar-btn"]}
         text={"View Calendar"}
         size={FontSizes.smaller}

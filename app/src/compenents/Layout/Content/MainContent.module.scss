@@ -1,0 +1,38 @@
+.book-cover-info-container {
+  .book-cover {
+    grid-column: span 3;
+
+    .caption {
+      margin-top: 8px;
+      color: var(--color-text-sec);
+    }
+  }
+
+  .book-summary {
+    grid-column: span 7;
+
+    *:first-child {
+      margin-top: 0;
+    }
+
+    p {
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+  }
+
+  .start-reading-btn {
+    grid-column: span 12;
+    margin-top: 16px;
+    padding: 12px;
+    background-color: var(--color-bg-sec);
+    line-height: 32px;
+    text-transform: uppercase;
+    color: var(--color-text-sec);
+    text-align: center;
+  }
+}
+
+.book-subpages {
+  margin-top: 48px;
+}

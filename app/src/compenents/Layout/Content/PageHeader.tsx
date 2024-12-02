@@ -102,7 +102,12 @@ export const PageHeader: React.FC<PageContentProps> = ({ page, type }) => {
         );
 
       case "book cover":
-        return <></>;
+        return (
+          <div className={styles["post-header-container"]}>
+            {Content.title}
+            {Content.authors}
+          </div>
+        );
 
       default:
         return (

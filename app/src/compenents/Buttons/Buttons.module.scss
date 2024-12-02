@@ -28,6 +28,10 @@
   }
 }
 
+.page-link {
+  display: block;
+}
+
 .text-button {
   text-align: center;
   color: var(--color-text-sec);
@@ -44,11 +48,4 @@
       border: 1px solid var(--color-border-main);
     }
   }
-
-  // &.font-size-smaller {
-  //   padding: 4px 0;
-  //   .container {
-  //     padding: 8px;
-  //   }
-  // }
 }

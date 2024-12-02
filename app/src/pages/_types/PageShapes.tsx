@@ -20,6 +20,11 @@ export type PageElement = JSX.Element | string
 
 export type PageContent = PageElement[];
 
+export type Author = {
+  data: Page
+  roles: Role[]
+}
+
 export interface BasicInfo {
   title: string;
   path: string;
@@ -30,7 +35,7 @@ export interface PostInfo {
   update: [number, number, number];
   coverUrl: string;
   coverCaption?: string;
-  authors: { data: Page; roles: Role[] }[];
+  authors: Author[];
   label: Topic;
   tags: string[];
 

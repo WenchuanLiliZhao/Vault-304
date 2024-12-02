@@ -34,7 +34,7 @@
           border-radius: 1000px;
 
           &.not-current-month {
-            color: var(--color-text-neg);
+            color: var(--color-text-disable);
           }
 
           &.today {

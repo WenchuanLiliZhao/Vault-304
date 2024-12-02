@@ -37,11 +37,12 @@ export function SortPosts({ posts, sortby }: SortPostsProps): Page[] {
 
 interface PostFeedProps {
   posts: Page[];
+  className?: string
 }
 
-export const PostFeed: React.FC<PostFeedProps> = ({ posts }) => {
+export const PostFeed: React.FC<PostFeedProps> = ({ posts, className }) => {
   return (
-    <MainGridView className={styles["post-feed"]}>
+    <MainGridView className={`${styles["post-feed"]} ${className}`}>
       {posts.map((post: Page, i: number) => (
         <div  key={i} className={styles["post-container"]}>
           <PostCard post={post} />
