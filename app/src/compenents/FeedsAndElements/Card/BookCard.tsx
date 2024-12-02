@@ -48,7 +48,7 @@ export const BookCard: React.FC<BookCardProps> = ({ bookCover }) => {
             </div>
           </div>
 
-          <HoverBox mode={"onDark"} />
+          <HoverBox mode={"onLight"} />
         </>
       )}
     </PageLink>
