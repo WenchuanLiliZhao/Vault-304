@@ -42,6 +42,7 @@ export interface PostInfo {
   // note: invisible
   toc?: Page[];
   parent?: Page;
+  postType?: "article" | "book cover";
 }
 
 export type Subpages = { [key: string]: Page };

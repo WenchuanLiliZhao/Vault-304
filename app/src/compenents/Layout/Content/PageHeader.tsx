@@ -4,16 +4,14 @@ import { Page } from "../../../pages/_types/PageShapes";
 import { FontSizes } from "../../../appStyles/font";
 import { MDBlock } from "../../Markdown/MDBlock";
 import { MainGridView, SecInMainGridView, MainView } from "../Grid/GridViews";
-import { PageType } from "../../../pages/_types/PageType";
 import { PageLink } from "../_Functions/Links";
 
 interface PageContentProps {
   page: Page;
-  type: PageType;
 }
 
-export const PageHeader: React.FC<PageContentProps> = ({ page, type }) => {
-  const Content = {
+export const PageHeader: React.FC<PageContentProps> = ({ page }) => {
+  const elements = {
     title: (
       <>
         <h1 className={`${styles["page-title"]} ${FontSizes.pageTitle}`}>
@@ -90,41 +88,47 @@ export const PageHeader: React.FC<PageContentProps> = ({ page, type }) => {
     ),
   };
 
-  const ContentByCase = () => {
-    switch (type) {
-      case "post":
-        return (
-          <div className={styles["post-header-container"]}>
-            {Content.label}
-            {Content.title_sub}
-            {Content.authors}
-          </div>
-        );
+  const Content = () => {
+    if (page.postInfo?.postType) {
+      const type = page.postInfo.postType;
 
-      case "book cover":
-        return (
-          <div className={styles["post-header-container"]}>
-            {Content.title}
-            {Content.authors}
-          </div>
-        );
+      switch (type) {
+        case "article":
+          return (
+            <div className={styles["post-header-container"]}>
+              {elements.label}
+              {elements.title_sub}
+              {elements.authors}
+            </div>
+          );
 
-      default:
-        return (
-          <MainGridView>
-            <SecInMainGridView className={styles["head-content"]} initSpan={8}>
-              {Content.title}
-              {Content.summary}
-            </SecInMainGridView>
-          </MainGridView>
-        );
+        case "book cover":
+          return (
+            <div className={styles["post-header-container"]}>
+              {elements.title}
+              {elements.authors}
+            </div>
+          );
+
+        default:
+          return <h1>Content: Page type error</h1>;
+      }
+    } else {
+      return (
+        <MainGridView>
+          <SecInMainGridView className={styles["head-content"]} initSpan={8}>
+            {elements.title}
+            {elements.summary}
+          </SecInMainGridView>
+        </MainGridView>
+      );
     }
   };
 
   return (
     <header className={styles["page-header"]}>
       <MainView>
-        <ContentByCase />
+        <Content />
       </MainView>
     </header>
   );

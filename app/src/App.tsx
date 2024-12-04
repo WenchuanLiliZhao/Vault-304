@@ -29,19 +29,19 @@ ${SiteInfo["about & location"]}
       <Routes>
         <Route
           index
-          element={<PageLayout page={Channels.Home} type="channel" />}
+          element={<PageLayout page={Channels.Home}/>}
         />
 
         <Route
           path={`/${TestPage.info.path}`}
-          element={<PageLayout page={TestPage} type="channel" />}
+          element={<PageLayout page={TestPage} />}
         />
 
         {Object.values(Channels).map((item: Page, i: number) => (
           <Route
             key={`${item}${i}`}
             path={`/${item.info.path}`}
-            element={<PageLayout page={item} type="channel" />}
+            element={<PageLayout page={item} />}
           />
         ))}
 
@@ -49,7 +49,7 @@ ${SiteInfo["about & location"]}
           <Route
             key={i}
             path={`/${item.info.path}`}
-            element={<PageLayout page={item} type="person" />}
+            element={<PageLayout page={item} />}
           />
         ))}
 
@@ -57,14 +57,14 @@ ${SiteInfo["about & location"]}
           <React.Fragment key={`${book}${i}`}>
             <Route
               path={`/${book.cover.info.path}`}
-              element={<PageLayout page={book.cover} type="book cover" />}
+              element={<PageLayout page={book.cover} />}
             />
 
             {Object.values(book.subpages).map((page: Page, k: number) => (
               <Route
                 key={`${page}${k}`}
                 path={`/${page.info.path}`}
-                element={<PageLayout page={page} type="post" />}
+                element={<PageLayout page={page} />}
               />
             ))}
           </React.Fragment>

@@ -55,6 +55,9 @@ export function CreateBook<T extends Subpages>({
 
       // Assign parent to the subpage
       subpage.postInfo.parent = cover;
+
+      cover.postInfo.postType = "book cover"
+      subpage.postInfo.postType = subpage.postInfo.postType ? subpage.postInfo.postType : "article"
     }
   });
 

@@ -1,5 +1,4 @@
 import { Page } from "../../pages/_types/PageShapes";
-import { PageType } from "../../pages/_types/PageType";
 import { Aside } from "./Aside/Aside";
 import { MainContent } from "./Content/MainContent";
 import { PageHeader } from "./Content/PageHeader";
@@ -11,10 +10,9 @@ import React from "react";
 
 interface PageLayoutProps {
   page: Page;
-  type: PageType;
 }
 
-export const PageLayout: React.FC<PageLayoutProps> = ({ page, type }) => {
+export const PageLayout: React.FC<PageLayoutProps> = ({ page }) => {
   return (
     <div className={styles["page-layout"]}>
       <TopNav page={page} />
@@ -23,12 +21,12 @@ export const PageLayout: React.FC<PageLayoutProps> = ({ page, type }) => {
           <Nav />
         </div>
         <div className={styles["mid"]}>
-          <PageHeader page={page} type={type} />
-          <MainContent page={page} type={type} />
+          <PageHeader page={page} />
+          <MainContent page={page} />
           <Footer />
         </div>
         <div className={styles["right"]}>
-          <Aside page={page} type={type} />
+          <Aside page={page} />
         </div>
       </div>
     </div>

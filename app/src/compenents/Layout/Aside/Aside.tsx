@@ -12,19 +12,17 @@ import {
   AsideKeywords,
   AuthorsInfoBox,
 } from "./AsideComponents/AsideArticle";
-import { PageType } from "../../../pages/_types/PageType";
 import { AsideToc } from "./AsideComponents/AsideToc";
 import { Channels } from "../../../pages/channels/Channels";
 
 interface AsideProps {
   page: Page;
-  type: PageType;
 }
 
 export const AsideId = "aside";
 export const AsideToggleClass = "toggled";
 
-export const Aside: React.FC<AsideProps> = ({ page, type }) => {
+export const Aside: React.FC<AsideProps> = ({ page }) => {
   function ToggleAside() {
     const findAside = document.getElementById(AsideId);
     const condition = findAside?.classList.contains(AsideToggleClass);
@@ -47,34 +45,10 @@ export const Aside: React.FC<AsideProps> = ({ page, type }) => {
     findBody?.classList.remove("disable-scroll");
   }
 
-  const AsideContent = () => {
-    switch (type) {
-      case "channel":
-        return [
-          <AsideCalendar />,
-          <AsideInfoBox
-            title={"About & Location"}
-            content={[
-              SiteInfo["about & location"],
-              <>
-                <TextBtn
-                  text={"About"}
-                  size={FontSizes.smaller}
-                  fillMode={"fill"}
-                  onDark={false}
-                  inline={false}
-                  link={Channels.About}
-                />
-              </>,
-            ]}
-          />,
-          <AsideInfoBox
-            title={"Copyrights"}
-            content={[SiteInfo["copyrights"]]}
-          />,
-        ];
-      case "post":
-        return [
+  const Content = () => {
+    if (page.postInfo?.postType) {
+      switch (page.postInfo.postType) {
+        case "article": return [
           <AsideToc page={page} />,
           <AsideInfoBox
             title={"Summary of the Page"}
@@ -82,9 +56,9 @@ export const Aside: React.FC<AsideProps> = ({ page, type }) => {
           />,
           <AsideKeywords page={page} />,
           <AuthorsInfoBox page={page} />,
-        ];
-      case "book cover":
-        return [
+        ]
+
+        case "book cover": return [
           <AsideToc page={page} />,
           <AsideInfoBox
             title={"Summary of the Page"}
@@ -92,11 +66,36 @@ export const Aside: React.FC<AsideProps> = ({ page, type }) => {
           />,
           <AsideKeywords page={page} />,
           <AuthorsInfoBox page={page} />,
-        ];
-      default:
-        return null;
+        ]
+
+        default: return [<h1>Aside: Page type error</h1>]
+      }
+    } else {
+      return [
+        <AsideCalendar />,
+        <AsideInfoBox
+          title={"About & Location"}
+          content={[
+            SiteInfo["about & location"],
+            <>
+              <TextBtn
+                text={"About"}
+                size={FontSizes.smaller}
+                fillMode={"fill"}
+                onDark={false}
+                inline={false}
+                link={Channels.About}
+              />
+            </>,
+          ]}
+        />,
+        <AsideInfoBox
+          title={"Copyrights"}
+          content={[SiteInfo["copyrights"]]}
+        />,
+      ];
     }
-  };
+  }
 
   return (
     <aside
@@ -114,7 +113,7 @@ export const Aside: React.FC<AsideProps> = ({ page, type }) => {
       </div>
       <div className={styles["content-container"]}>
         <div>
-          {AsideContent()?.map((item, i: number) => (
+          {Content()?.map((item, i: number) => (
             <div className={styles["aside-item"]} key={`${item}${i}`}>
               {item}
             </div>
