@@ -8,6 +8,7 @@ import React from "react";
 import { People } from "./pages/People/_PeopleEnum";
 import { SiteInfo } from "./SiteInfo";
 import { DateFormatter, GetTodayDateArray } from "./compenents/Functions/Date";
+import { TestPage } from "./pages/Test/_TestPage";
 
 function App() {
   const welcome = `Welcome to ${SiteInfo.title}`;
@@ -29,6 +30,11 @@ ${SiteInfo["about & location"]}
         <Route
           index
           element={<PageLayout page={Channels.Home} type="channel" />}
+        />
+
+        <Route
+          path={`/${TestPage.info.path}`}
+          element={<PageLayout page={TestPage} type="channel" />}
         />
 
         {Object.values(Channels).map((item: Page, i: number) => (

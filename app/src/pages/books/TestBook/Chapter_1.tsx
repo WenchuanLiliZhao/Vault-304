@@ -66,16 +66,11 @@ rhoncus mauris eu gravida. Nam faucibus lacus eget eleifend eleifend. Nam sed po
 
 `,
 
-<Figure
-  art={
-    <img
+    <Figure
       src="https://upload.wikimedia.org/wikipedia/commons/2/25/Paul_C%C3%A9zanne%2C_French_-_The_Large_Bathers_-_Google_Art_Project.jpg"
-      alt=""
-    />
-  }
-  size="large"
-  caption="Sed mauris risus, aliquet ut nisi ac, congue finibus justo."
-/>,
+      ratio={[6385, 5337]}
+      caption=""
+    />,
 
     `
 
@@ -90,7 +85,7 @@ Donec ipsum diam, pharetra sit amet euismod in, condimentum vitae odio. Nunc non
 Suspendisse nec erat sit amet sem posuere ornare. Proin neque tellus, placerat suscipit ipsum eget, scelerisque placerat velit. In eget pellentesque mi, nec gravida turpis. Aenean quis massa vitae eros accumsan gravida quis nec nisi. Donec vulputate laoreet diam. Ut quis rhoncus lacus. Sed egestas lobortis sagittis. Sed eget gravida libero. Sed sit amet tellus at nisi tempor scelerisque pellentesque vel odio. Donec dignissim, erat quis scelerisque posuere, ante elit porta erat, id convallis felis magna sed enim. Integer vitae porta leo. Nam ultrices quam ut neque ullamcorper, non semper metus sodales. In consequat sodales semper. Sed volutpat ligula in lorem mattis, volutpat malesuada sapien porttitor.
 `,
 
-`
+    `
 \`\`\`typescript
 import { Page } from "../../_types/PageShapes";
 import { Topics } from "../../_types/Topics";

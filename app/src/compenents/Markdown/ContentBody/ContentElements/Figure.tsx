@@ -1,24 +1,30 @@
 import styles from "./Figure.module.scss"
 import React from "react";
 import { MDBlock } from "../../MDBlock";
+import { Img } from "../../../InlineElements/Img";
 
 interface FigureProps {
-  art: React.ReactNode;
+  src: string
+  ratio?: [number, number]
   size?: "large"
-  caption?: string;
+  caption: string
 }
 
-export const Figure: React.FC<FigureProps> = ({ art, caption, size }) => {
-  const sizeOption = size ? size : "default"
+export const Figure: React.FC<FigureProps> = ({src, ratio, size, caption}) => {
+  
+  return (<>
+    <figure className={`
+      ${styles["figure"]}
+      ${size ? size : styles["default"]}
+    `}>
+      <Img src={src} alt={`Image: ${caption}`} ratio={ratio} />
 
-  return (
-    <figure className={`${styles["figure"]} ${styles[sizeOption]}`}>
-      <div>{art}</div>
-      {caption && (
-        <figcaption className={styles["caption"]}>
-          <MDBlock>{caption}</MDBlock>
-        </figcaption>
-      )}
+      <figcaption className={styles["caption"]}>
+        <MDBlock>
+          {caption}
+        </MDBlock>
+      </figcaption>
     </figure>
-  );
-};
+  </>)
+}
+
