@@ -2,7 +2,7 @@ import styles from "./MainContent.module.scss";
 import React from "react";
 import { Page } from "../../../pages/_types/PageShapes";
 import { MainGridView, MainView } from "../Grid/GridViews";
-import { ContentMapper } from "../../Markdown/ContentBody/ContentMapper";
+import { ArticleMapper } from "../../Markdown/ContentBody/ArticleMapper";
 import { FontSizes } from "../../../appStyles/font";
 import { MDBlock } from "../../Markdown/MDBlock";
 import { PageLink } from "../_Functions/Links";
@@ -21,7 +21,7 @@ export const MainContent: React.FC<MainContentProps> = ({ page }) => {
 
       switch (type) {
         case "article":
-          return <ContentMapper page={page} />;
+          return <ArticleMapper page={page} />;
         case "book cover":
           return (
             <>
@@ -64,7 +64,7 @@ export const MainContent: React.FC<MainContentProps> = ({ page }) => {
           return <p>Content: Page type error</p>;
       }
     } else {
-      return (<ContentMapper page={page} />)
+      return (<ArticleMapper page={page} />)
     }
   };
 

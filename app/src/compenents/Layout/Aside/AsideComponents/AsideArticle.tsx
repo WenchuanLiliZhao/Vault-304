@@ -1,8 +1,6 @@
 import React from "react";
 import {
   Page,
-  PageContent,
-  PageElement,
 } from "../../../../pages/_types/PageShapes";
 import styles from "./AsideArticle.module.scss";
 import { FontSizes } from "../../../../appStyles/font";
@@ -14,7 +12,7 @@ import { HoverBox } from "../../../Buttons/Buttons";
 interface AsideArticleProps {
   title: string;
   titleDeco?: string;
-  content: PageContent;
+  content: (string | JSX.Element)[];
 }
 
 export const AsideInfoBox: React.FC<AsideArticleProps> = ({
@@ -35,7 +33,7 @@ export const AsideInfoBox: React.FC<AsideArticleProps> = ({
           )}
         </div>
         <div className={styles["body"]}>
-          {content.map((item: PageElement, i: number) => (
+          {content.map((item, i: number) => (
             <React.Fragment key={`${item}${i}`}>
               {typeof item === "string" ? (
                 <>

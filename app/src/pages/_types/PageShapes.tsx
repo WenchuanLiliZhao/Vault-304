@@ -3,7 +3,7 @@ import { Topic } from "./Topics";
 export interface Page {
   info: BasicInfo;
   postInfo?: PostInfo;
-  content: PageContent;
+  content: (JSX.Element | string)[];
 }
 
 export const Roles = {
@@ -15,10 +15,6 @@ export const Roles = {
 }
 
 export type Role = (typeof Roles)[keyof typeof Roles];
-
-export type PageElement = JSX.Element | string
-
-export type PageContent = PageElement[];
 
 export type Author = {
   data: Page

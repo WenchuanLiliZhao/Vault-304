@@ -1,17 +1,13 @@
-import styles from "./ContentMapper.module.scss"
+import styles from "./ArticleMapper.module.scss"
 
 import React from "react";
-import { Page, PageElement } from "../../../pages/_types/PageShapes";
+import { Page } from "../../../pages/_types/PageShapes";
 import { MDBlock } from "../MDBlock";
 
-interface PostBodyProps {
-  page: Page;
-}
-
-export const ContentMapper: React.FC<PostBodyProps> = ({ page }) => {
+export const ArticleMapper: React.FC<{ page: Page }> = ({ page }) => {
   return (
     <article className={`${styles["post-content"]}`}>
-      {page.content.map((item: PageElement, i: number) => (
+      {page.content.map((item, i: number) => (
         <React.Fragment key={i}>
           {typeof item === "string" && <MDBlock>{item}</MDBlock>}
           {typeof item === "object" && item}
