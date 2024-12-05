@@ -1,3 +1,4 @@
+import { MDElements } from "../../../compenents/Markdown/ContentBody/ContentElements/_MDElements";
 import { Figure } from "../../../compenents/Markdown/ContentBody/ContentElements/Figure";
 import { Page, Roles } from "../../_types/PageShapes";
 import { Topics } from "../../_types/Topics";
@@ -28,29 +29,15 @@ export const Chapter_1: Page = {
   content: [
     
     `
-## Introduction
 
 Let $X$ be a set and let $\\mathcal T$ be a topology on $X$; i.e., $(X, \\mathcal T)$ is a *topological space*. Let $x$ be an element of $X$.
 
-I have a local directory:
+${MDElements.Callout({
+  type: "warning",
+  children: "Vivamus non elit maximus ipsum euismod dignissim. Sed nibh ipsum, sodales sed metus id, sodales bibendum massa. Proin finibus nec nulla quis eleifend."
+})}
 
-- MyFolder
-  1. Folder 1
-  2. Folder 2
-      - …
-  3. Folder 3
-  4. Folder 1
-  5. Folder 2
-      - …
-  6. Folder 3
-  7. Folder 1
-  8. Folder 2
-      - …
-  9. Folder 3
-  10. Folder 1
-  11. Folder 2
-      - …
-  12. Folder 3
+## Introduction
 
 Nam vehicula [dignissim]() $x \\in X$ enim sed bibendum \`this is code\`. Ut gravida lorem justo, non aliquam libero condimentum quis. Phasellus auctor nisl at magna euismod, eu pharetra est porttitor. Vivamus convallis orci vitae sollicitudin pretium. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam tempor
 

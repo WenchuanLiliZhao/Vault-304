@@ -10,6 +10,10 @@
       padding-left: calc(var(--spacing-nav-size) * 1);
       padding-right: var(--spacing-aside-size);
 
+      &[class~=toggled] {
+        padding-right: 0;
+      }
+
       @media only screen and (max-width: 1400px) {
         padding-right: 0;
       }

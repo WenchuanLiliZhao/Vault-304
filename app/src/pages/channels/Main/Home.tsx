@@ -9,9 +9,7 @@ const Home: Page = {
   info: {
     title: "Overview",
     path: "", // this is home
-    summary: `
-Vivamus nunc felis, interdum sed accumsan at, finibus et dui. Aenean sed massa dictum, condimentum felis sit amet, suscipit felis.
-    `,
+    summary: "A complete archive of every post, story, and reflection gathered in one place – structured in reverse chronological order, guiding you through the latest updates down to the earliest moments of the journey",
   },
   content: [
     <>

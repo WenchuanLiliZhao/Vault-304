@@ -9,6 +9,7 @@ import "katex/dist/katex.min.css";
 import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/github.css"; // Hardcoded theme
+import rehypeRaw from "rehype-raw";
 
 interface Props {
   children: string;
@@ -26,7 +27,7 @@ export const MDBlock: React.FC<Props> = ({ children, className }) => {
     <ReactMarkdown
       className={className}
       remarkPlugins={[remarkMath, remarkGfm]}
-      rehypePlugins={[rehypeKatex, rehypeHighlight]}
+      rehypePlugins={[rehypeKatex, rehypeHighlight, rehypeRaw]}
       components={{
         pre: ({ children }) => {
           // Note: Extracting the code block from the pre area

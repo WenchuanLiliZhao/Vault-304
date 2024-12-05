@@ -1,5 +1,5 @@
 import { Page } from "../../pages/_types/PageShapes";
-import { Aside } from "./Aside/Aside";
+import { Aside, WorkWithAside } from "./Aside/Aside";
 import { MainContent } from "./Content/MainContent";
 import { PageHeader } from "./Content/PageHeader";
 import { Footer } from "./Nav/Footer";
@@ -16,7 +16,7 @@ export const PageLayout: React.FC<{ page: Page }> = ({ page }) => {
         <div className={styles["left"]}>
           <Nav />
         </div>
-        <div className={styles["mid"]}>
+        <div className={`${styles["mid"]} ${WorkWithAside}`}>
           <PageHeader page={page} />
           <MainContent page={page} />
           <Footer />

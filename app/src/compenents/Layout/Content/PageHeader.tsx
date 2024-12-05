@@ -67,16 +67,6 @@ export const PageHeader: React.FC<{page: Page}> = ({ page }) => {
                 <PageLink link={item.data} className={styles["author-name"]}>
                   {item.data.info.title}
                 </PageLink>
-                {/* {` (`}
-                {item.roles.map((role, k: number) => (
-                  <React.Fragment key={k}>
-                    {k > 0 && k + 1 !== item.roles.length && ", "}
-
-                    {k > 0 && k + 1 === item.roles.length && " and "}
-                    {role}
-                  </React.Fragment>
-                ))}
-                {`)`} */}
               </React.Fragment>
             ))}
           </div>

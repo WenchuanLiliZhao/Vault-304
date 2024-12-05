@@ -20,18 +20,22 @@ interface AsideProps {
 }
 
 export const AsideId = "aside";
+export const WorkWithAside = "work-with-aside";
 export const AsideToggleClass = "toggled";
 
 export const Aside: React.FC<AsideProps> = ({ page }) => {
   function ToggleAside() {
-    const findAside = document.getElementById(AsideId);
-    const condition = findAside?.classList.contains(AsideToggleClass);
-    if (condition) {
-      findAside?.classList.remove(AsideToggleClass);
-      EnableBodyScroll();
-    } else {
-      findAside?.classList.add(AsideToggleClass);
-      DisableBodyScorll();
+    const findWorkWithAside = document.querySelectorAll(`.${WorkWithAside}`);
+    for (let i = 0; i < findWorkWithAside.length; i++) {
+      const element = findWorkWithAside[i];
+
+      if (element.classList.contains(AsideToggleClass)) {
+        element.classList.remove(AsideToggleClass);
+        EnableBodyScroll();
+      } else {
+        element.classList.add(AsideToggleClass);
+        DisableBodyScorll();
+      }
     }
   }
 
@@ -48,27 +52,30 @@ export const Aside: React.FC<AsideProps> = ({ page }) => {
   const Content = () => {
     if (page.postInfo?.postType) {
       switch (page.postInfo.postType) {
-        case "article": return [
-          <AsideToc page={page} />,
-          <AsideInfoBox
-            title={"Summary of the Page"}
-            content={[page.info.summary]}
-          />,
-          <AsideKeywords page={page} />,
-          <AuthorsInfoBox page={page} />,
-        ]
+        case "article":
+          return [
+            <AsideToc page={page} />,
+            <AsideInfoBox
+              title={"Summary of the Page"}
+              content={[page.info.summary]}
+            />,
+            <AsideKeywords page={page} />,
+            <AuthorsInfoBox page={page} />,
+          ];
 
-        case "book cover": return [
-          <AsideToc page={page} />,
-          <AsideInfoBox
-            title={"Summary of the Page"}
-            content={[page.info.summary]}
-          />,
-          <AsideKeywords page={page} />,
-          <AuthorsInfoBox page={page} />,
-        ]
+        case "book cover":
+          return [
+            <AsideToc page={page} />,
+            <AsideInfoBox
+              title={"Summary of the Page"}
+              content={[page.info.summary]}
+            />,
+            <AsideKeywords page={page} />,
+            <AuthorsInfoBox page={page} />,
+          ];
 
-        default: return [<h1>Aside: Page type error</h1>]
+        default:
+          return [<h1>Aside: Page type error</h1>];
       }
     } else {
       return [
@@ -95,11 +102,11 @@ export const Aside: React.FC<AsideProps> = ({ page }) => {
         />,
       ];
     }
-  }
+  };
 
   return (
     <aside
-      className={styles["aside"]}
+      className={`${styles["aside"]} ${WorkWithAside}`}
       id={AsideId}
       onMouseOver={DisableBodyScorll}
       onMouseLeave={EnableBodyScroll}
