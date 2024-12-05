@@ -1,11 +1,11 @@
 import styles from "./CardFeed.module.scss"
 import React from "react";
-import { Page } from "../../../pages/_types/PageShapes";
+import { Page, SortPostMode } from "../../../pages/_types/PageShapes";
 import { MainGridView } from "../../Layout/Grid/GridViews";
 import { PostCard } from "../Card/PostCard";
 import { BookCard } from "../Card/BookCard";
 
-export type SortPostMode = "default" | "date" | "a-z"
+
 
 interface SortPostsProps {
   posts: { [key: string]: Page };

@@ -8,11 +8,7 @@ import { TopNav } from "./Nav/TopNav";
 import styles from "./PageLayout.module.scss";
 import React from "react";
 
-interface PageLayoutProps {
-  page: Page;
-}
-
-export const PageLayout: React.FC<PageLayoutProps> = ({ page }) => {
+export const PageLayout: React.FC<{ page: Page }> = ({ page }) => {
   return (
     <div className={styles["page-layout"]}>
       <TopNav page={page} />

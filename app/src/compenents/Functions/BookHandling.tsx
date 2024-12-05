@@ -2,24 +2,24 @@
 // 创建书籍
 // ========================
 
-import { Page, Role, Subpages } from "../../pages/_types/PageShapes";
-import { SortPostMode, SortPosts } from "../FeedsAndElements/Feeds/CardFeeds";
+import { Page, Role, SortPostMode, Subpages } from "../../pages/_types/PageShapes";
+import { SortPosts } from "../FeedsAndElements/Feeds/CardFeeds";
 
 // 定义 CorrectedBook 类型
 // 更新后反映新的结构，并校正拼写错误
-type CorrectedBook = {
+type Book = {
   cover: Page; // 对应 `Page` 类型的 cover（封面是一个页面）
   subpages: Subpages; // 将之前的 `pages` 替换为 `subpages`
   sortTocBy: SortPostMode;
 };
 
 // 定义基础参数类型
-type BookParams<T extends Subpages> = CorrectedBook & {
+type BookParams<T extends Subpages> = Book & {
   subpages: T;
 };
 
 // 返回的书籍类型
-type BookA<T extends Subpages> = CorrectedBook & {
+type BookA<T extends Subpages> = Book & {
   subpages: T;
 };
 

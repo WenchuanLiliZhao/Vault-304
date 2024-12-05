@@ -26,7 +26,9 @@ export const Chapter_1: Page = {
   },
 
   content: [
-    `## Introduction
+    
+    `
+## Introduction
 
 Let $X$ be a set and let $\\mathcal T$ be a topology on $X$; i.e., $(X, \\mathcal T)$ is a *topological space*. Let $x$ be an element of $X$.
 

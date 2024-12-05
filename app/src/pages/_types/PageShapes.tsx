@@ -42,3 +42,5 @@ export interface PostInfo {
 }
 
 export type Subpages = { [key: string]: Page };
+
+export type SortPostMode = "default" | "date" | "a-z"

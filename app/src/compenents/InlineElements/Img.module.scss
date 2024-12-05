@@ -2,6 +2,10 @@
   position: relative;
   width: 100%;
   overflow: hidden;
+  // background-color: var(--color-bg-sec);
+  background-image: url(../../assets/image-bg.svg);
+  background-size: 64px;
+  background-position: top left;
 
   .img {
     position: absolute;

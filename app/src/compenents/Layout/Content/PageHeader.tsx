@@ -6,11 +6,8 @@ import { MDBlock } from "../../Markdown/MDBlock";
 import { MainGridView, SecInMainGridView, MainView } from "../Grid/GridViews";
 import { PageLink } from "../_Functions/Links";
 
-interface PageContentProps {
-  page: Page;
-}
 
-export const PageHeader: React.FC<PageContentProps> = ({ page }) => {
+export const PageHeader: React.FC<{page: Page}> = ({ page }) => {
   const elements = {
     title: (
       <>
@@ -90,9 +87,7 @@ export const PageHeader: React.FC<PageContentProps> = ({ page }) => {
 
   const Content = () => {
     if (page.postInfo?.postType) {
-      const type = page.postInfo.postType;
-
-      switch (type) {
+      switch (page.postInfo.postType) {
         case "article":
           return (
             <div className={styles["post-header-container"]}>
